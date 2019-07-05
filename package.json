@@ -1,0 +1,25 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "typescript": "^3.5.2",
+    "npm": "^6.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grzpotry/NodeServer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grzpotry/NodeServer/issues"
+  },
+  "homepage": "https://github.com/grzpotry/NodeServer#readme"
+}
