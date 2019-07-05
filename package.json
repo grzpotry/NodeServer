@@ -4,14 +4,17 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "@types/node": "^12.0.12",
     "express": "^4.17.1",
     "npm": "^6.9.0",
     "typescript": "^3.5.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/node": "^12.0.12"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc" : "tsc",
+    "prod": "tsc && node ./dist/src/server.js"
   },
   "repository": {
     "type": "git",
