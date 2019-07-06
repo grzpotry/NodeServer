@@ -1,37 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
+using WebSocketSharp;
 
 public class ClientConnection : MonoBehaviour
 {
-    private Socket _tempSocket;
-
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
-        var hostAdress = "localhost";
-        int port = 3000;
+        _socket = new WebSocket("ws://localhost:3000/socket.io/?EIO=2&transport=websocket");
+        _socket.OnOpen += SocketOnOnOpen;
 
-        _tempSocket = new Socket(SocketType.Stream, ProtocolType.Tcp);
-        _tempSocket.Connect(hostAdress, port);
-
-
-
-        Debug.Log($"Connected with {hostAdress} {port}");
+        _socket.Connect();
+        _socket.Log.Output = (data, s) => { Debug.Log(s);};
     }
 
-    void Update()
+    protected void Update()
     {
-        _tempSocket.Send(Encoding.UTF8.GetBytes("packet"));
-        Debug.Log("IsConnected: " + _tempSocket.Connected);
+        Debug.Log("IsConnected: " + _socket.IsAlive);
     }
 
+    private WebSocket _socket;
+
+    private void SocketOnOnOpen(object sender, EventArgs e)
+    {
+        Debug.Log("connected");
+    }
     private void OnDisable()
     {
-        _tempSocket.Disconnect(false);
-        _tempSocket.Dispose();
+        _socket.Close();
     }
 }
