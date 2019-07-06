@@ -24,9 +24,10 @@ namespace Domain
                 return;
             }
 
+            _socket.Close();
             _socket.OnOpen -= OnConnected;
             _socket.OnClose -= OnDisconnected;
-            _socket.Close();
+
             ((IDisposable) _socket)?.Dispose();
             _socket = null;
         }
@@ -37,6 +38,7 @@ namespace Domain
             {
                 _lastReconnectionTime = Time.realtimeSinceStartup;
                 ConnectWithHost(_adress, _port);
+                return;
             }
         }
 
@@ -51,6 +53,7 @@ namespace Domain
                 Debug.LogError("Already connected");
                 return;
             }
+
 
             _socket.ConnectAsync();
         }
