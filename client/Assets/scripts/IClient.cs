@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 
 namespace Domain
 {
@@ -11,5 +12,6 @@ namespace Domain
 
         void ConnectWithHost(string adress, int port);
         void Update();
+        Task SendMessageAsync(string message);
     }
 }

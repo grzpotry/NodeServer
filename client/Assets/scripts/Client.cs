@@ -1,44 +1,61 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Tasks;
 using UnityEngine;
-using WebSocketSharp;
+using Object = System.Object;
 
 namespace Domain
 {
     public class Client : IClient
     {
+        public event Action<IClient> Connected;
+        public event Action<IClient> Disconnected;
+        public bool IsConnected => _tcpClient.Connected;
+
         public Client(bool autoReconnect)
         {
             _autoReconnect = autoReconnect;
         }
 
-        public event Action<IClient> Connected;
-        public event Action<IClient> Disconnected;
-
-        public bool IsConnected => _socket?.IsAlive ?? false;
-
         public void Dispose()
         {
-            if (_socket == null)
+            if (_tcpClient == null)
             {
                 return;
             }
 
-            _socket.Close();
-            _socket.OnOpen -= OnConnected;
-            _socket.OnClose -= OnDisconnected;
+            _shouldBeConnected = false;
+            _tcpClient.Client.Disconnect(reuseSocket: false);
+            _tcpClient.Close();
+            _tcpClient.Dispose();
+            _tcpClient = null;
+        }
 
-            ((IDisposable) _socket)?.Dispose();
-            _socket = null;
+        public async Task SendMessageAsync(string message)
+        {
+            if (!_tcpClient.Connected)
+            {
+                throw new Exception("Not connected with server");
+            }
+            byte[] outStream = Encoding.ASCII.GetBytes(message);
+            var stream = _tcpClient.GetStream();
+            if (!stream.CanWrite)
+            {
+                throw new Exception("Can't write to server stream");
+            }
+
+            await stream.WriteAsync(outStream, 0, outStream.Length);
         }
 
         public void Update()
         {
-            if (_autoReconnect && _connectionLost && Time.realtimeSinceStartup - _lastReconnectionTime > ReconnectIntevalSeconds)
+            var lostConnection = _shouldBeConnected && !IsConnected;
+
+            if (_autoReconnect && lostConnection && Time.realtimeSinceStartup - _lastReconnectionTime > ReconnectIntevalSeconds)
             {
                 _lastReconnectionTime = Time.realtimeSinceStartup;
                 ConnectWithHost(_adress, _port);
-                return;
             }
         }
 
@@ -46,51 +63,23 @@ namespace Domain
         {
             _port = port;
             _adress = adress;
-            _socket = GetOrCreateSocket(adress, port);
 
-            if (_socket.IsAlive)
+            if (_tcpClient.Connected)
             {
                 Debug.LogError("Already connected");
                 return;
             }
 
-
-            _socket.ConnectAsync();
+            _tcpClient.ConnectAsync(adress, port);
+            _shouldBeConnected = true;
         }
 
         private const int ReconnectIntevalSeconds = 1;
         private readonly bool _autoReconnect;
-        private WebSocket _socket;
         private string _adress;
         private int _port;
-        private bool _connectionLost;
+        private bool _shouldBeConnected;
         private float _lastReconnectionTime;
-
-        private WebSocket GetOrCreateSocket(string adress, int port)
-        {
-            if (_socket != null)
-            {
-                return _socket;
-            }
-
-            var socket = new WebSocket($"ws://{adress}:{port}/socket.io/?EIO=2&transport=websocket");
-            socket.OnOpen += OnConnected;
-            socket.OnClose += OnDisconnected;
-            return socket;
-        }
-
-        private void OnConnected(object sender, EventArgs e)
-        {
-            Debug.Log("Connected");
-            _connectionLost = false;
-            Connected?.Invoke(this);
-        }
-
-        private void OnDisconnected(object sender, CloseEventArgs e)
-        {
-            Debug.Log("Disconnected");
-            _connectionLost = true;
-            Disconnected?.Invoke(this);
-        }
+        private TcpClient _tcpClient = new TcpClient();
     }
 }

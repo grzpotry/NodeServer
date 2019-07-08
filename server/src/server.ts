@@ -1,7 +1,45 @@
 var app = require('./app');
+var net = require('net');
+var fs: File = require('fs');
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3010);
 
+const appServer = app.listen(app.get('port'), () => 
+{
+    console.log(`Application listening on  ${appServer.address().port}`);
+});
+
+var connectedSockets: any[] = [];
+
+// Create a TCP socket listener
+var server = net.Server(function (socket: any) 
+{ 
+    console.log("Client connected");
+    console.log(Object.keys(socket));
+
+        // 'data' is an event that means that a message was just sent by the 
+        // client application
+        socket.on('data', function (data: any) 
+        {
+            console.log(`received ${data}`)
+        });
+
+        socket.on('end', function ()
+        {
+            console.log("client disconnected");
+        }); 
+});
+
+server.on('listening', function() 
+{
+    console.log(`Main server listening...`);
+});
+
+let port = 3000;
+server.listen(port);
+
+let connectedClientsById: Map<string, Client> = new Map<string, Client>();
+//module.exports.connectedClients = connectedClientsById;
 
 class Client
 {
@@ -17,49 +55,3 @@ class Client
 
     private client: any;
 }
-
-const server = app.listen(app.get('port'), () => 
-{
-    console.log(`Listening on  ${server.address().port}`);
-});
-
-//TODO: refactor to plain 'net' - TCP socket listener, socket IO is not fully compatible with .NET (Websharp is able to connect but it is a bit cumbersome and not reliable)
-let io = require("socket.io")(server);
-
-let connectedClientsById: Map<string, Client> = new Map<string, Client>();
-//module.exports.connectedClients = connectedClientsById;
-
-io.on("connect", function(socket: any)
-{  
-    let client = socket.client;
-    console.log(`Connected client: ${client.id}`);
-    
-    if (connectedClientsById.has(client.id))
-    {
-        throw new Error('Connected user already exists')
-    }     
-
-    connectedClientsById.set(client.id, client);
-    console.log(`Clients:${connectedClientsById.size}`)
-
-    socket.on('disconnect', () => 
-    {
-        console.log(`Disconnected client: ${client.id}`);
-        if (!connectedClientsById.delete(client.id))
-        {
-            throw new Error('Failed to remove client');
-        }
-    });
-});
-
-
-io.use(function(socket: any, next: any) {
-    var handshakeData = socket.request;
-    console.log("TICK");
-
-    // make sure the handshake data looks good as before
-    // if error do this:
-      // next(new Error('not authorized'));
-    // else just call next
-    next();
-  });

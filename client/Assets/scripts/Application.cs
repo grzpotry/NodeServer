@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Domain
@@ -13,6 +14,11 @@ namespace Domain
         private void Update()
         {
             _localClient.Update();
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                _localClient.SendMessageAsync("Hello server !").ContinueWith(_ => Debug.Log("Message sent"));
+            }
         }
 
         protected void OnDestroy()
@@ -26,7 +32,7 @@ namespace Domain
         }
 
         private IClient _localClient;
-        private const string ServerAdress = "localhost";
+        private const string ServerAdress = "127.0.0.1";
         private const int Port = 3000;
     }
 }
