@@ -4,33 +4,38 @@ var fs: File = require('fs');
 
 app.set('port', process.env.PORT || 3010);
 
-const appServer = app.listen(app.get('port'), () => 
+const appServer = app.listen(app.get('port'), () =>
 {
     console.log(`Application listening on  ${appServer.address().port}`);
 });
 
 var connectedSockets: any[] = [];
 
-// Create a TCP socket listener
-var server = net.Server(function (socket: any) 
-{ 
-    console.log("Client connected");
-    console.log(Object.keys(socket));
 
-        // 'data' is an event that means that a message was just sent by the 
-        // client application
-        socket.on('data', function (data: any) 
-        {
-            console.log(`received ${data}`)
-        });
+var server = net.Server(function (socket: any)
+{
+    console.log(`${Object.keys(socket)}`)
+    //Node automatically creates and send socket when client connects
+    socket.on('connection', function (socket: any)
+    {
 
-        socket.on('end', function ()
-        {
-            console.log("client disconnected");
-        }); 
+        console.log("Client connected");
+    });
+
+    //Data received from client
+    socket.on('data', function (data: any)
+    {
+        console.log(`received ${data}`)
+    });
+
+    //
+    socket.on('end', function ()
+    {
+        console.log("client disconnected");
+    });
 });
 
-server.on('listening', function() 
+server.on('listening', function ()
 {
     console.log(`Main server listening...`);
 });
