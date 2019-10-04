@@ -10,7 +10,7 @@ namespace Domain
 
         bool IsConnected { get; }
 
-        void ConnectWithHost(string adress, int port);
+        Task ConnectWithHostAsync(string adress, int port);
         void Update();
         Task SendMessageAsync(string message);
     }

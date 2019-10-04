@@ -7,12 +7,27 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/dist/src/server.js"
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach by Process ID",
+            "processId": "${command:PickProcess}"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "nodemon",
             "runtimeExecutable": "nodemon",
             "program": "${workspaceFolder}/dist/src/server.js",
             "restart": true,
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
+            "outFiles": [
+                "${workspaceFolder}/dist"
+            ],
             "skipFiles": [
                 "<node_internals>/**/*.js"
             ]
@@ -33,9 +48,13 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
+            "sourceMaps": true,
             "program": "${workspaceFolder}/dist/src/server.js",
             "skipFiles": [
                 "<node_internals>/**/*.js"
+            ],
+            "outFiles": [
+                "${workspaceFolder}/dist/src"
             ]
         }
     ]

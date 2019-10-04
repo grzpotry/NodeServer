@@ -14,11 +14,15 @@ var connectedSockets: any[] = [];
 
 var server = net.Server(function (socket: any)
 {
-    console.log(`${Object.keys(socket)}`)
+    var clientId = socket.remoteAddress + ":" + socket.remotePort;
+
+    //TODO: identify client by id received during handshake
+    //TODO: establish protocol between client and server (header which indicates how to interpret message ? (eg. handshake, gamestate update etc.) - read about such protocols and existing solutions)
+    clientSessions.set(clientId, socket);
+
     //Node automatically creates and send socket when client connects
     socket.on('connection', function (socket: any)
     {
-
         console.log("Client connected");
     });
 
@@ -26,9 +30,9 @@ var server = net.Server(function (socket: any)
     socket.on('data', function (data: any)
     {
         console.log(`received ${data}`)
+        socket.write('Hello baby, do you wanna play the game ?');
     });
 
-    //
     socket.on('end', function ()
     {
         console.log("client disconnected");
@@ -43,20 +47,5 @@ server.on('listening', function ()
 let port = 3000;
 server.listen(port);
 
-let connectedClientsById: Map<string, Client> = new Map<string, Client>();
+let clientSessions: Map<string, any> = new Map<string, any>();
 //module.exports.connectedClients = connectedClientsById;
-
-class Client
-{
-    public get Id(): string
-    {
-        return this.client.id;
-    }
-
-    public constructor(client: any)
-    {
-        this.client = client;
-    }
-
-    private client: any;
-}

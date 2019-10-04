@@ -1,4 +1,4 @@
-using System.Threading.Tasks;
+using System;
 using UnityEngine;
 
 namespace Domain
@@ -7,8 +7,16 @@ namespace Domain
     {
         protected void Start()
         {
-            _localClient = new Client(autoReconnect: true);
-            _localClient.ConnectWithHost(ServerAdress, Port);
+            _localClient = new Client();
+
+            try
+            {
+                _localClient.ConnectWithHostAsync(ServerAdress, Port);
+            }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+            }
         }
 
         private void Update()
