@@ -22,11 +22,6 @@ namespace Domain
         private void Update()
         {
             _localClient.Update();
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                _localClient.SendMessageAsync("Hello server !").ContinueWith(_ => Debug.Log("Message sent"));
-            }
         }
 
         protected void OnDestroy()

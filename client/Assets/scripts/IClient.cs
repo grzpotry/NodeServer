@@ -12,6 +12,5 @@ namespace Domain
 
         Task ConnectWithHostAsync(string adress, int port);
         void Update();
-        Task SendMessageAsync(string message);
     }
 }

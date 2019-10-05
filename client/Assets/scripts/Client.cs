@@ -4,8 +4,9 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using Networking.Protobuf.CommunicationProtocol;
+using Google.Protobuf;
 using UnityEngine;
-using Object = System.Object;
 
 namespace Domain
 {
@@ -26,6 +27,34 @@ namespace Domain
             _tcpClient.Close();
             _tcpClient.Dispose();
             _tcpClient = null;
+        }
+
+        public async Task SendHandshakeAsync()
+        {
+            var handshake = new HandshakePayload()
+            {
+                ProtocolVersion = 1
+            };
+
+            await SendRequestAsync(handshake, RequestCode.Handshake);
+        }
+
+        private async Task SendRequestAsync(IMessage message, RequestCode code)
+        {
+            var header = new Header()
+            {
+                PayloadSize = message.CalculateSize()
+            };
+
+            var request = new Request()
+            {
+                Header = header,
+                Payload = message.ToByteString(),
+                RequestCode = code
+            };
+
+            Debug.Log($"Payload size: {header.PayloadSize} Request size: {request.CalculateSize()}");
+            await Task.Run(() => request.WriteTo(_stream));
         }
 
         public void Update()
@@ -81,22 +110,6 @@ namespace Domain
             Debug.Log($"Received total {_bundle.Count} bytes message: {message}");
         }
 
-        public async Task SendMessageAsync(string message)
-        {
-            if (!_tcpClient.Connected)
-            {
-                throw new Exception("Not connected with server");
-            }
-            byte[] outStream = Encoding.ASCII.GetBytes(message);
-
-            if (!_stream.CanWrite)
-            {
-                throw new Exception("Can't write to server stream");
-            }
-
-            await _stream.WriteAsync(outStream, 0, outStream.Length);
-        }
-
         public async Task ConnectWithHostAsync(string adress, int port)
         {
             _port = port;
@@ -110,12 +123,7 @@ namespace Domain
 
             await _tcpClient.ConnectAsync(adress, port);
             _stream = _tcpClient.GetStream();
-            await HandshakeAsync();
-        }
-
-        private async Task HandshakeAsync()
-        {
-            await SendMessageAsync("Hello, playerXXX here");
+            await SendHandshakeAsync();
         }
 
         private const int ReconnectIntevalSeconds = 1;
@@ -127,6 +135,6 @@ namespace Domain
         private TcpClient _tcpClient = new TcpClient();
 
         private readonly List<byte> _bundle = new List<byte>();
-        private readonly byte[] _bundleBuffer = new byte[1024]; //just single package which we
+        private readonly byte[] _bundleBuffer = new byte[1024];
     }
 }

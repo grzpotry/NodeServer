@@ -25,7 +25,7 @@ namespace Networking.Protobuf.CommunicationProtocol {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtDb21tdW5pY2F0aW9uUHJvdG9jb2wucHJvdG8SFUNvbW11bmljYXRpb25Q",
-            "cm90b2NvbCIdCgZIZWFkZXISEwoLUGF5bG9hZFNpemUYASABKA0i1AEKCFJl",
+            "cm90b2NvbCIdCgZIZWFkZXISEwoLUGF5bG9hZFNpemUYASABKAUi1AEKCFJl",
             "c3BvbnNlEi0KBkhlYWRlchgBIAEoCzIdLkNvbW11bmljYXRpb25Qcm90b2Nv",
             "bC5IZWFkZXISNwoLUmVxdWVzdENvZGUYAiABKA4yIi5Db21tdW5pY2F0aW9u",
             "UHJvdG9jb2wuUmVxdWVzdENvZGUSOQoMUmVzcG9uc2VDb2RlGAMgASgOMiMu",
@@ -33,7 +33,8 @@ namespace Networking.Protobuf.CommunicationProtocol {
             "c3NhZ2UYBCABKAkSDwoHUGF5bG9hZBgFIAEoDCKCAQoHUmVxdWVzdBItCgZI",
             "ZWFkZXIYASABKAsyHS5Db21tdW5pY2F0aW9uUHJvdG9jb2wuSGVhZGVyEjcK",
             "C1JlcXVlc3RDb2RlGAIgASgOMiIuQ29tbXVuaWNhdGlvblByb3RvY29sLlJl",
-            "cXVlc3RDb2RlEg8KB1BheWxvYWQYAyABKAwqNQoLUmVxdWVzdENvZGUSDQoJ",
+            "cXVlc3RDb2RlEg8KB1BheWxvYWQYAyABKAwiKwoQSGFuZHNoYWtlUGF5bG9h",
+            "ZBIXCg9Qcm90b2NvbFZlcnNpb24YASABKA0qNQoLUmVxdWVzdENvZGUSDQoJ",
             "SGFuZHNoYWtlEAASCQoFTG9naW4QARIMCghSZWdpc3RlchACKlcKDFJlc3Bv",
             "bnNlQ29kZRILCgdTdWNjZXNzEAASEwoPSW52YWxpZFByb3RvY29sEAESEAoM",
             "SW52YWxpZExvZ2luEAISEwoPSW52YWxpZFBhc3N3b3JkEANCLKoCKU5ldHdv",
@@ -43,7 +44,8 @@ namespace Networking.Protobuf.CommunicationProtocol {
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Networking.Protobuf.CommunicationProtocol.RequestCode), typeof(global::Networking.Protobuf.CommunicationProtocol.ResponseCode), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Networking.Protobuf.CommunicationProtocol.Header), global::Networking.Protobuf.CommunicationProtocol.Header.Parser, new[]{ "PayloadSize" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Networking.Protobuf.CommunicationProtocol.Response), global::Networking.Protobuf.CommunicationProtocol.Response.Parser, new[]{ "Header", "RequestCode", "ResponseCode", "ErrorMessage", "Payload" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Networking.Protobuf.CommunicationProtocol.Request), global::Networking.Protobuf.CommunicationProtocol.Request.Parser, new[]{ "Header", "RequestCode", "Payload" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Networking.Protobuf.CommunicationProtocol.Request), global::Networking.Protobuf.CommunicationProtocol.Request.Parser, new[]{ "Header", "RequestCode", "Payload" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Networking.Protobuf.CommunicationProtocol.HandshakePayload), global::Networking.Protobuf.CommunicationProtocol.HandshakePayload.Parser, new[]{ "ProtocolVersion" }, null, null, null, null)
           }));
     }
     #endregion
@@ -102,9 +104,9 @@ namespace Networking.Protobuf.CommunicationProtocol {
 
     /// <summary>Field number for the "PayloadSize" field.</summary>
     public const int PayloadSizeFieldNumber = 1;
-    private uint payloadSize_;
+    private int payloadSize_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public uint PayloadSize {
+    public int PayloadSize {
       get { return payloadSize_; }
       set {
         payloadSize_ = value;
@@ -147,7 +149,7 @@ namespace Networking.Protobuf.CommunicationProtocol {
     public void WriteTo(pb::CodedOutputStream output) {
       if (PayloadSize != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(PayloadSize);
+        output.WriteInt32(PayloadSize);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -158,7 +160,7 @@ namespace Networking.Protobuf.CommunicationProtocol {
     public int CalculateSize() {
       int size = 0;
       if (PayloadSize != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PayloadSize);
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PayloadSize);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -186,7 +188,7 @@ namespace Networking.Protobuf.CommunicationProtocol {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            PayloadSize = input.ReadUInt32();
+            PayloadSize = input.ReadInt32();
             break;
           }
         }
@@ -625,6 +627,135 @@ namespace Networking.Protobuf.CommunicationProtocol {
           }
           case 26: {
             Payload = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class HandshakePayload : pb::IMessage<HandshakePayload> {
+    private static readonly pb::MessageParser<HandshakePayload> _parser = new pb::MessageParser<HandshakePayload>(() => new HandshakePayload());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<HandshakePayload> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Networking.Protobuf.CommunicationProtocol.CommunicationProtocolReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public HandshakePayload() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public HandshakePayload(HandshakePayload other) : this() {
+      protocolVersion_ = other.protocolVersion_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public HandshakePayload Clone() {
+      return new HandshakePayload(this);
+    }
+
+    /// <summary>Field number for the "ProtocolVersion" field.</summary>
+    public const int ProtocolVersionFieldNumber = 1;
+    private uint protocolVersion_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public uint ProtocolVersion {
+      get { return protocolVersion_; }
+      set {
+        protocolVersion_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as HandshakePayload);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(HandshakePayload other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ProtocolVersion != other.ProtocolVersion) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ProtocolVersion != 0) hash ^= ProtocolVersion.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ProtocolVersion != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(ProtocolVersion);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ProtocolVersion != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ProtocolVersion);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(HandshakePayload other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ProtocolVersion != 0) {
+        ProtocolVersion = other.ProtocolVersion;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            ProtocolVersion = input.ReadUInt32();
             break;
           }
         }

@@ -19,7 +19,7 @@ enum ResponseCode
 
 message Header
 {
-    uint32 PayloadSize = 1;
+    int32 PayloadSize = 1;
 }
 
 message Response
@@ -36,4 +36,9 @@ message Request
     Header Header = 1;
     RequestCode RequestCode = 2;
     bytes Payload = 3;
+}
+
+message HandshakePayload
+{
+    uint32 ProtocolVersion = 1;
 }
