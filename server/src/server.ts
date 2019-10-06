@@ -1,6 +1,8 @@
 var app = require('./app');
 var net = require('net');
 var fs: File = require('fs');
+let root = require('./CommunicationProtocol'); //TODO: Find a way to import protocol gen files with type definitions
+
 
 app.set('port', process.env.PORT || 3010);
 

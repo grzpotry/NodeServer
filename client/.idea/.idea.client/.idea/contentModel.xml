@@ -10,6 +10,13 @@
           <e p="Application.cs" t="Include" />
           <e p="Client.cs" t="Include" />
           <e p="IClient.cs" t="Include" />
+          <e p="Networking" t="Include">
+            <e p="CommunicationProtocol" t="Include">
+              <e p="generated" t="Include">
+                <e p="CommunicationProtocol.cs" t="Include" />
+              </e>
+            </e>
+          </e>
         </e>
       </e>
       <e p="client.sln" t="IncludeFlat" />
