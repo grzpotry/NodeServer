@@ -1,8 +1,13 @@
 var app = require('./app');
 var net = require('net');
 var fs: File = require('fs');
-let root = require('./CommunicationProtocol'); //TODO: Find a way to import protocol gen files with type definitions
+var protobuf = require("protobufjs");
 
+//COMPILATOR DIRECTIVE
+/// <reference path="./CommunicationProtocol"/>
+
+import * as protocol from "./CommunicationProtocol"
+var tempPayload = new protocol.HandshakePayload();
 
 app.set('port', process.env.PORT || 3010);
 
