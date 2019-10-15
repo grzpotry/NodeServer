@@ -1,13 +1,36 @@
+
 var app = require('./app');
 var net = require('net');
 var fs: File = require('fs');
 var protobuf = require("protobufjs");
 
 //COMPILATOR DIRECTIVE
-/// <reference path="./CommunicationProtocol"/>
+/// <reference path="./test.d.ts"/>
 
 import * as protocol from "./CommunicationProtocol"
-var tempPayload = new protocol.HandshakePayload();
+import { Server } from "https";
+tempPayload: protocol.HandshakePayload = new protocol.HandshakePayload();
+
+// import * as interfaces from "./test"
+
+//Test class and interfaces, TODO: use interface from generated .d.ts and class from generated .js
+
+//export - implementation, declare - definition
+export class Foo implements IResponse
+{
+    testStr: string;
+
+    constructor()
+    {
+        this.testStr = "";
+    }
+}
+
+declare interface IResponse
+{
+    testStr: string;
+}
+
 
 app.set('port', process.env.PORT || 3010);
 
