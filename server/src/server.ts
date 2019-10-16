@@ -4,33 +4,13 @@ var net = require('net');
 var fs: File = require('fs');
 var protobuf = require("protobufjs");
 
-//COMPILATOR DIRECTIVE
-/// <reference path="./test.d.ts"/>
+//CommunicationProtocol.js contains protobuf generated classes with protocol structures
+//CommunicationProtocol.d.ts contains interfaces for static-typing purposes
+import * as protocol from "./CommunicationProtocol_pb";
 
-import * as protocol from "./CommunicationProtocol"
-import { Server } from "https";
-tempPayload: protocol.HandshakePayload = new protocol.HandshakePayload();
 
-// import * as interfaces from "./test"
-
-//Test class and interfaces, TODO: use interface from generated .d.ts and class from generated .js
-
-//export - implementation, declare - definition
-export class Foo implements IResponse
-{
-    testStr: string;
-
-    constructor()
-    {
-        this.testStr = "";
-    }
-}
-
-declare interface IResponse
-{
-    testStr: string;
-}
-
+var tempPayload: CommunicationProtocol.HandshakePayload = new protocol.HandshakePayload()
+// var tempHeader: CommunicationProtocol.Header = new protocol.Header();
 
 app.set('port', process.env.PORT || 3010);
 
@@ -40,7 +20,6 @@ const appServer = app.listen(app.get('port'), () =>
 });
 
 var connectedSockets: any[] = [];
-
 
 var server = net.Server(function (socket: any)
 {
