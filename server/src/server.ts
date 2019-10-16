@@ -6,7 +6,7 @@ var protobuf = require("protobufjs");
 
 //CommunicationProtocol.js contains protobuf generated classes with protocol structures
 //CommunicationProtocol.d.ts contains interfaces for static-typing purposes
-import * as protocol from "./CommunicationProtocol_pb";
+import * as protocol from "./generated/CommunicationProtocol_pb";
 
 
 var tempPayload: CommunicationProtocol.HandshakePayload = new protocol.HandshakePayload()
