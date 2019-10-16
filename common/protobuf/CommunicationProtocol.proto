@@ -1,0 +1,44 @@
+syntax = "proto3";
+package CommunicationProtocol;
+option csharp_namespace = "Networking.Protobuf.CommunicationProtocol";
+
+enum RequestCode
+{
+    Handshake = 0;
+    Login = 1;
+    Register = 2;
+}
+
+enum ResponseCode
+{
+    Success = 0;
+    InvalidProtocol = 1;
+    InvalidLogin = 2;
+    InvalidPassword = 3;
+};
+
+message Header
+{
+    int32 PayloadSize = 1;
+}
+
+message Response
+{
+    Header Header = 01;
+    RequestCode RequestCode = 2;
+    ResponseCode ResponseCode = 3;
+    string ErrorMessage = 4;
+    bytes Payload = 5;
+}
+
+message Request
+{
+    Header Header = 1;
+    RequestCode RequestCode = 2;
+    bytes Payload = 3;
+}
+
+message HandshakePayload
+{
+    uint32 ProtocolVersion = 1;
+}
