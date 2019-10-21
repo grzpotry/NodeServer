@@ -8,9 +8,8 @@ var protobuf = require("protobufjs");
 //CommunicationProtocol.d.ts contains interfaces for static-typing purposes
 import * as protocol from "./generated/CommunicationProtocol_pb";
 
-
+//TODO: serializacja i deserializacja eventów i operacji - IProtocol + Protocol18 - referencje z photona + notki z evernote
 var tempPayload: CommunicationProtocol.HandshakePayload = new protocol.HandshakePayload()
-// var tempHeader: CommunicationProtocol.Header = new protocol.Header();
 
 app.set('port', process.env.PORT || 3010);
 
@@ -18,6 +17,7 @@ const appServer = app.listen(app.get('port'), () =>
 {
     console.log(`Application listening on  ${appServer.address().port}`);
 });
+
 
 var connectedSockets: any[] = [];
 
