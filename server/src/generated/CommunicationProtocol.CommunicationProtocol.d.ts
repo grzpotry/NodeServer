@@ -2,33 +2,34 @@
 
 declare namespace CommunicationProtocol {
 
-    export enum RequestCode {
-        Handshake = "Handshake",
-        Login = "Login",
-        Register = "Register",
+    export enum CommandType {
+        OpRequest = "OpRequest",
+        OpResponse = "OpResponse",
+        Event = "Event",
     }
-    export enum ResponseCode {
-        Success = "Success",
+    export enum EventCode {
+        Joined = "Joined",
+        Left = "Left",
+    }
+    export enum OperationRequestCode {
+        Handshake = "Handshake",
+        RaiseEvent = "RaiseEvent",
+    }
+    export enum OperationResponseCode {
         InvalidProtocol = "InvalidProtocol",
         InvalidLogin = "InvalidLogin",
         InvalidPassword = "InvalidPassword",
     }
-    export interface Header {
-        PayloadSize?: number;
-    }
-
-    export interface Response {
-        Header?: Header;
-        RequestCode?: RequestCode;
-        ResponseCode?: ResponseCode;
-        ErrorMessage?: string;
+    export interface OperationRequest {
+        RequestCode?: OperationRequestCode;
+        ResponseCode?: OperationResponseCode;
         Payload?: Uint8Array;
     }
 
-    export interface Request {
-        Header?: Header;
-        RequestCode?: RequestCode;
-        Payload?: Uint8Array;
+    export interface EventData {
+        //TODO: sender (server or other client)
+        Code?: EventCode;
+        Payload?: Uint8Array; // TODO: change to dictionary alternatively
     }
 
     export interface HandshakePayload {

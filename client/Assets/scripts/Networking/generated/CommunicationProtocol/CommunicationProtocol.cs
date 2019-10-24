@@ -25,26 +25,25 @@ namespace Networking.Protobuf.CommunicationProtocol {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtDb21tdW5pY2F0aW9uUHJvdG9jb2wucHJvdG8SFUNvbW11bmljYXRpb25Q",
-            "cm90b2NvbCIdCgZIZWFkZXISEwoLUGF5bG9hZFNpemUYASABKAUi1AEKCFJl",
-            "c3BvbnNlEi0KBkhlYWRlchgBIAEoCzIdLkNvbW11bmljYXRpb25Qcm90b2Nv",
-            "bC5IZWFkZXISNwoLUmVxdWVzdENvZGUYAiABKA4yIi5Db21tdW5pY2F0aW9u",
-            "UHJvdG9jb2wuUmVxdWVzdENvZGUSOQoMUmVzcG9uc2VDb2RlGAMgASgOMiMu",
-            "Q29tbXVuaWNhdGlvblByb3RvY29sLlJlc3BvbnNlQ29kZRIUCgxFcnJvck1l",
-            "c3NhZ2UYBCABKAkSDwoHUGF5bG9hZBgFIAEoDCKCAQoHUmVxdWVzdBItCgZI",
-            "ZWFkZXIYASABKAsyHS5Db21tdW5pY2F0aW9uUHJvdG9jb2wuSGVhZGVyEjcK",
-            "C1JlcXVlc3RDb2RlGAIgASgOMiIuQ29tbXVuaWNhdGlvblByb3RvY29sLlJl",
-            "cXVlc3RDb2RlEg8KB1BheWxvYWQYAyABKAwiKwoQSGFuZHNoYWtlUGF5bG9h",
-            "ZBIXCg9Qcm90b2NvbFZlcnNpb24YASABKA0qNQoLUmVxdWVzdENvZGUSDQoJ",
-            "SGFuZHNoYWtlEAASCQoFTG9naW4QARIMCghSZWdpc3RlchACKlcKDFJlc3Bv",
-            "bnNlQ29kZRILCgdTdWNjZXNzEAASEwoPSW52YWxpZFByb3RvY29sEAESEAoM",
-            "SW52YWxpZExvZ2luEAISEwoPSW52YWxpZFBhc3N3b3JkEANCLKoCKU5ldHdv",
-            "cmtpbmcuUHJvdG9idWYuQ29tbXVuaWNhdGlvblByb3RvY29sYgZwcm90bzM="));
+            "cm90b2NvbCKpAQoQT3BlcmF0aW9uUmVxdWVzdBJACgtSZXF1ZXN0Q29kZRgB",
+            "IAEoDjIrLkNvbW11bmljYXRpb25Qcm90b2NvbC5PcGVyYXRpb25SZXF1ZXN0",
+            "Q29kZRJCCgxSZXNwb25zZUNvZGUYAiABKA4yLC5Db21tdW5pY2F0aW9uUHJv",
+            "dG9jb2wuT3BlcmF0aW9uUmVzcG9uc2VDb2RlEg8KB1BheWxvYWQYAyABKAwi",
+            "TAoJRXZlbnREYXRhEi4KBENvZGUYASABKA4yIC5Db21tdW5pY2F0aW9uUHJv",
+            "dG9jb2wuRXZlbnRDb2RlEg8KB1BheWxvYWQYAiABKAwiKwoQSGFuZHNoYWtl",
+            "UGF5bG9hZBIXCg9Qcm90b2NvbFZlcnNpb24YASABKA0qNwoLQ29tbWFuZFR5",
+            "cGUSDQoJT3BSZXF1ZXN0EAASDgoKT3BSZXNwb25zZRABEgkKBUV2ZW50EAIq",
+            "IQoJRXZlbnRDb2RlEgoKBkpvaW5lZBAAEggKBExlZnQQASo1ChRPcGVyYXRp",
+            "b25SZXF1ZXN0Q29kZRINCglIYW5kc2hha2UQABIOCgpSYWlzZUV2ZW50EAEq",
+            "UwoVT3BlcmF0aW9uUmVzcG9uc2VDb2RlEhMKD0ludmFsaWRQcm90b2NvbBAA",
+            "EhAKDEludmFsaWRMb2dpbhABEhMKD0ludmFsaWRQYXNzd29yZBACQiyqAilO",
+            "ZXR3b3JraW5nLlByb3RvYnVmLkNvbW11bmljYXRpb25Qcm90b2NvbGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Networking.Protobuf.CommunicationProtocol.RequestCode), typeof(global::Networking.Protobuf.CommunicationProtocol.ResponseCode), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Networking.Protobuf.CommunicationProtocol.Header), global::Networking.Protobuf.CommunicationProtocol.Header.Parser, new[]{ "PayloadSize" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Networking.Protobuf.CommunicationProtocol.Response), global::Networking.Protobuf.CommunicationProtocol.Response.Parser, new[]{ "Header", "RequestCode", "ResponseCode", "ErrorMessage", "Payload" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Networking.Protobuf.CommunicationProtocol.Request), global::Networking.Protobuf.CommunicationProtocol.Request.Parser, new[]{ "Header", "RequestCode", "Payload" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Networking.Protobuf.CommunicationProtocol.CommandType), typeof(global::Networking.Protobuf.CommunicationProtocol.EventCode), typeof(global::Networking.Protobuf.CommunicationProtocol.OperationRequestCode), typeof(global::Networking.Protobuf.CommunicationProtocol.OperationResponseCode), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Networking.Protobuf.CommunicationProtocol.OperationRequest), global::Networking.Protobuf.CommunicationProtocol.OperationRequest.Parser, new[]{ "RequestCode", "ResponseCode", "Payload" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Networking.Protobuf.CommunicationProtocol.EventData), global::Networking.Protobuf.CommunicationProtocol.EventData.Parser, new[]{ "Code", "Payload" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Networking.Protobuf.CommunicationProtocol.HandshakePayload), global::Networking.Protobuf.CommunicationProtocol.HandshakePayload.Parser, new[]{ "ProtocolVersion" }, null, null, null, null)
           }));
     }
@@ -52,27 +51,36 @@ namespace Networking.Protobuf.CommunicationProtocol {
 
   }
   #region Enums
-  public enum RequestCode {
-    [pbr::OriginalName("Handshake")] Handshake = 0,
-    [pbr::OriginalName("Login")] Login = 1,
-    [pbr::OriginalName("Register")] Register = 2,
+  public enum CommandType {
+    [pbr::OriginalName("OpRequest")] OpRequest = 0,
+    [pbr::OriginalName("OpResponse")] OpResponse = 1,
+    [pbr::OriginalName("Event")] Event = 2,
   }
 
-  public enum ResponseCode {
-    [pbr::OriginalName("Success")] Success = 0,
-    [pbr::OriginalName("InvalidProtocol")] InvalidProtocol = 1,
-    [pbr::OriginalName("InvalidLogin")] InvalidLogin = 2,
-    [pbr::OriginalName("InvalidPassword")] InvalidPassword = 3,
+  public enum EventCode {
+    [pbr::OriginalName("Joined")] Joined = 0,
+    [pbr::OriginalName("Left")] Left = 1,
+  }
+
+  public enum OperationRequestCode {
+    [pbr::OriginalName("Handshake")] Handshake = 0,
+    [pbr::OriginalName("RaiseEvent")] RaiseEvent = 1,
+  }
+
+  public enum OperationResponseCode {
+    [pbr::OriginalName("InvalidProtocol")] InvalidProtocol = 0,
+    [pbr::OriginalName("InvalidLogin")] InvalidLogin = 1,
+    [pbr::OriginalName("InvalidPassword")] InvalidPassword = 2,
   }
 
   #endregion
 
   #region Messages
-  public sealed partial class Header : pb::IMessage<Header> {
-    private static readonly pb::MessageParser<Header> _parser = new pb::MessageParser<Header>(() => new Header());
+  public sealed partial class OperationRequest : pb::IMessage<OperationRequest> {
+    private static readonly pb::MessageParser<OperationRequest> _parser = new pb::MessageParser<OperationRequest>(() => new OperationRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Header> Parser { get { return _parser; } }
+    public static pb::MessageParser<OperationRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -85,172 +93,30 @@ namespace Networking.Protobuf.CommunicationProtocol {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Header() {
+    public OperationRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Header(Header other) : this() {
-      payloadSize_ = other.payloadSize_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Header Clone() {
-      return new Header(this);
-    }
-
-    /// <summary>Field number for the "PayloadSize" field.</summary>
-    public const int PayloadSizeFieldNumber = 1;
-    private int payloadSize_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int PayloadSize {
-      get { return payloadSize_; }
-      set {
-        payloadSize_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Header);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Header other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (PayloadSize != other.PayloadSize) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (PayloadSize != 0) hash ^= PayloadSize.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (PayloadSize != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(PayloadSize);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (PayloadSize != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PayloadSize);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Header other) {
-      if (other == null) {
-        return;
-      }
-      if (other.PayloadSize != 0) {
-        PayloadSize = other.PayloadSize;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 8: {
-            PayloadSize = input.ReadInt32();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class Response : pb::IMessage<Response> {
-    private static readonly pb::MessageParser<Response> _parser = new pb::MessageParser<Response>(() => new Response());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Response> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Networking.Protobuf.CommunicationProtocol.CommunicationProtocolReflection.Descriptor.MessageTypes[1]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Response() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Response(Response other) : this() {
-      header_ = other.header_ != null ? other.header_.Clone() : null;
+    public OperationRequest(OperationRequest other) : this() {
       requestCode_ = other.requestCode_;
       responseCode_ = other.responseCode_;
-      errorMessage_ = other.errorMessage_;
       payload_ = other.payload_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Response Clone() {
-      return new Response(this);
-    }
-
-    /// <summary>Field number for the "Header" field.</summary>
-    public const int HeaderFieldNumber = 1;
-    private global::Networking.Protobuf.CommunicationProtocol.Header header_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Networking.Protobuf.CommunicationProtocol.Header Header {
-      get { return header_; }
-      set {
-        header_ = value;
-      }
+    public OperationRequest Clone() {
+      return new OperationRequest(this);
     }
 
     /// <summary>Field number for the "RequestCode" field.</summary>
-    public const int RequestCodeFieldNumber = 2;
-    private global::Networking.Protobuf.CommunicationProtocol.RequestCode requestCode_ = global::Networking.Protobuf.CommunicationProtocol.RequestCode.Handshake;
+    public const int RequestCodeFieldNumber = 1;
+    private global::Networking.Protobuf.CommunicationProtocol.OperationRequestCode requestCode_ = global::Networking.Protobuf.CommunicationProtocol.OperationRequestCode.Handshake;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Networking.Protobuf.CommunicationProtocol.RequestCode RequestCode {
+    public global::Networking.Protobuf.CommunicationProtocol.OperationRequestCode RequestCode {
       get { return requestCode_; }
       set {
         requestCode_ = value;
@@ -258,247 +124,13 @@ namespace Networking.Protobuf.CommunicationProtocol {
     }
 
     /// <summary>Field number for the "ResponseCode" field.</summary>
-    public const int ResponseCodeFieldNumber = 3;
-    private global::Networking.Protobuf.CommunicationProtocol.ResponseCode responseCode_ = global::Networking.Protobuf.CommunicationProtocol.ResponseCode.Success;
+    public const int ResponseCodeFieldNumber = 2;
+    private global::Networking.Protobuf.CommunicationProtocol.OperationResponseCode responseCode_ = global::Networking.Protobuf.CommunicationProtocol.OperationResponseCode.InvalidProtocol;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Networking.Protobuf.CommunicationProtocol.ResponseCode ResponseCode {
+    public global::Networking.Protobuf.CommunicationProtocol.OperationResponseCode ResponseCode {
       get { return responseCode_; }
       set {
         responseCode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "ErrorMessage" field.</summary>
-    public const int ErrorMessageFieldNumber = 4;
-    private string errorMessage_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ErrorMessage {
-      get { return errorMessage_; }
-      set {
-        errorMessage_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "Payload" field.</summary>
-    public const int PayloadFieldNumber = 5;
-    private pb::ByteString payload_ = pb::ByteString.Empty;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ByteString Payload {
-      get { return payload_; }
-      set {
-        payload_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Response);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Response other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (!object.Equals(Header, other.Header)) return false;
-      if (RequestCode != other.RequestCode) return false;
-      if (ResponseCode != other.ResponseCode) return false;
-      if (ErrorMessage != other.ErrorMessage) return false;
-      if (Payload != other.Payload) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (header_ != null) hash ^= Header.GetHashCode();
-      if (RequestCode != global::Networking.Protobuf.CommunicationProtocol.RequestCode.Handshake) hash ^= RequestCode.GetHashCode();
-      if (ResponseCode != global::Networking.Protobuf.CommunicationProtocol.ResponseCode.Success) hash ^= ResponseCode.GetHashCode();
-      if (ErrorMessage.Length != 0) hash ^= ErrorMessage.GetHashCode();
-      if (Payload.Length != 0) hash ^= Payload.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (header_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Header);
-      }
-      if (RequestCode != global::Networking.Protobuf.CommunicationProtocol.RequestCode.Handshake) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) RequestCode);
-      }
-      if (ResponseCode != global::Networking.Protobuf.CommunicationProtocol.ResponseCode.Success) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) ResponseCode);
-      }
-      if (ErrorMessage.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(ErrorMessage);
-      }
-      if (Payload.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteBytes(Payload);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (header_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Header);
-      }
-      if (RequestCode != global::Networking.Protobuf.CommunicationProtocol.RequestCode.Handshake) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) RequestCode);
-      }
-      if (ResponseCode != global::Networking.Protobuf.CommunicationProtocol.ResponseCode.Success) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ResponseCode);
-      }
-      if (ErrorMessage.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ErrorMessage);
-      }
-      if (Payload.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Payload);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Response other) {
-      if (other == null) {
-        return;
-      }
-      if (other.header_ != null) {
-        if (header_ == null) {
-          Header = new global::Networking.Protobuf.CommunicationProtocol.Header();
-        }
-        Header.MergeFrom(other.Header);
-      }
-      if (other.RequestCode != global::Networking.Protobuf.CommunicationProtocol.RequestCode.Handshake) {
-        RequestCode = other.RequestCode;
-      }
-      if (other.ResponseCode != global::Networking.Protobuf.CommunicationProtocol.ResponseCode.Success) {
-        ResponseCode = other.ResponseCode;
-      }
-      if (other.ErrorMessage.Length != 0) {
-        ErrorMessage = other.ErrorMessage;
-      }
-      if (other.Payload.Length != 0) {
-        Payload = other.Payload;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            if (header_ == null) {
-              Header = new global::Networking.Protobuf.CommunicationProtocol.Header();
-            }
-            input.ReadMessage(Header);
-            break;
-          }
-          case 16: {
-            RequestCode = (global::Networking.Protobuf.CommunicationProtocol.RequestCode) input.ReadEnum();
-            break;
-          }
-          case 24: {
-            ResponseCode = (global::Networking.Protobuf.CommunicationProtocol.ResponseCode) input.ReadEnum();
-            break;
-          }
-          case 34: {
-            ErrorMessage = input.ReadString();
-            break;
-          }
-          case 42: {
-            Payload = input.ReadBytes();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class Request : pb::IMessage<Request> {
-    private static readonly pb::MessageParser<Request> _parser = new pb::MessageParser<Request>(() => new Request());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Request> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Networking.Protobuf.CommunicationProtocol.CommunicationProtocolReflection.Descriptor.MessageTypes[2]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Request() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Request(Request other) : this() {
-      header_ = other.header_ != null ? other.header_.Clone() : null;
-      requestCode_ = other.requestCode_;
-      payload_ = other.payload_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Request Clone() {
-      return new Request(this);
-    }
-
-    /// <summary>Field number for the "Header" field.</summary>
-    public const int HeaderFieldNumber = 1;
-    private global::Networking.Protobuf.CommunicationProtocol.Header header_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Networking.Protobuf.CommunicationProtocol.Header Header {
-      get { return header_; }
-      set {
-        header_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "RequestCode" field.</summary>
-    public const int RequestCodeFieldNumber = 2;
-    private global::Networking.Protobuf.CommunicationProtocol.RequestCode requestCode_ = global::Networking.Protobuf.CommunicationProtocol.RequestCode.Handshake;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Networking.Protobuf.CommunicationProtocol.RequestCode RequestCode {
-      get { return requestCode_; }
-      set {
-        requestCode_ = value;
       }
     }
 
@@ -515,19 +147,19 @@ namespace Networking.Protobuf.CommunicationProtocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as Request);
+      return Equals(other as OperationRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Request other) {
+    public bool Equals(OperationRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Header, other.Header)) return false;
       if (RequestCode != other.RequestCode) return false;
+      if (ResponseCode != other.ResponseCode) return false;
       if (Payload != other.Payload) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -535,8 +167,8 @@ namespace Networking.Protobuf.CommunicationProtocol {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (header_ != null) hash ^= Header.GetHashCode();
-      if (RequestCode != global::Networking.Protobuf.CommunicationProtocol.RequestCode.Handshake) hash ^= RequestCode.GetHashCode();
+      if (RequestCode != global::Networking.Protobuf.CommunicationProtocol.OperationRequestCode.Handshake) hash ^= RequestCode.GetHashCode();
+      if (ResponseCode != global::Networking.Protobuf.CommunicationProtocol.OperationResponseCode.InvalidProtocol) hash ^= ResponseCode.GetHashCode();
       if (Payload.Length != 0) hash ^= Payload.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -551,13 +183,13 @@ namespace Networking.Protobuf.CommunicationProtocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (header_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Header);
-      }
-      if (RequestCode != global::Networking.Protobuf.CommunicationProtocol.RequestCode.Handshake) {
-        output.WriteRawTag(16);
+      if (RequestCode != global::Networking.Protobuf.CommunicationProtocol.OperationRequestCode.Handshake) {
+        output.WriteRawTag(8);
         output.WriteEnum((int) RequestCode);
+      }
+      if (ResponseCode != global::Networking.Protobuf.CommunicationProtocol.OperationResponseCode.InvalidProtocol) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) ResponseCode);
       }
       if (Payload.Length != 0) {
         output.WriteRawTag(26);
@@ -571,11 +203,11 @@ namespace Networking.Protobuf.CommunicationProtocol {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (header_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Header);
-      }
-      if (RequestCode != global::Networking.Protobuf.CommunicationProtocol.RequestCode.Handshake) {
+      if (RequestCode != global::Networking.Protobuf.CommunicationProtocol.OperationRequestCode.Handshake) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) RequestCode);
+      }
+      if (ResponseCode != global::Networking.Protobuf.CommunicationProtocol.OperationResponseCode.InvalidProtocol) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ResponseCode);
       }
       if (Payload.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Payload);
@@ -587,18 +219,15 @@ namespace Networking.Protobuf.CommunicationProtocol {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Request other) {
+    public void MergeFrom(OperationRequest other) {
       if (other == null) {
         return;
       }
-      if (other.header_ != null) {
-        if (header_ == null) {
-          Header = new global::Networking.Protobuf.CommunicationProtocol.Header();
-        }
-        Header.MergeFrom(other.Header);
-      }
-      if (other.RequestCode != global::Networking.Protobuf.CommunicationProtocol.RequestCode.Handshake) {
+      if (other.RequestCode != global::Networking.Protobuf.CommunicationProtocol.OperationRequestCode.Handshake) {
         RequestCode = other.RequestCode;
+      }
+      if (other.ResponseCode != global::Networking.Protobuf.CommunicationProtocol.OperationResponseCode.InvalidProtocol) {
+        ResponseCode = other.ResponseCode;
       }
       if (other.Payload.Length != 0) {
         Payload = other.Payload;
@@ -614,18 +243,178 @@ namespace Networking.Protobuf.CommunicationProtocol {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            if (header_ == null) {
-              Header = new global::Networking.Protobuf.CommunicationProtocol.Header();
-            }
-            input.ReadMessage(Header);
+          case 8: {
+            RequestCode = (global::Networking.Protobuf.CommunicationProtocol.OperationRequestCode) input.ReadEnum();
             break;
           }
           case 16: {
-            RequestCode = (global::Networking.Protobuf.CommunicationProtocol.RequestCode) input.ReadEnum();
+            ResponseCode = (global::Networking.Protobuf.CommunicationProtocol.OperationResponseCode) input.ReadEnum();
             break;
           }
           case 26: {
+            Payload = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class EventData : pb::IMessage<EventData> {
+    private static readonly pb::MessageParser<EventData> _parser = new pb::MessageParser<EventData>(() => new EventData());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<EventData> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Networking.Protobuf.CommunicationProtocol.CommunicationProtocolReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventData() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventData(EventData other) : this() {
+      code_ = other.code_;
+      payload_ = other.payload_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EventData Clone() {
+      return new EventData(this);
+    }
+
+    /// <summary>Field number for the "Code" field.</summary>
+    public const int CodeFieldNumber = 1;
+    private global::Networking.Protobuf.CommunicationProtocol.EventCode code_ = global::Networking.Protobuf.CommunicationProtocol.EventCode.Joined;
+    /// <summary>
+    ///TODO: sender (server or other client)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Networking.Protobuf.CommunicationProtocol.EventCode Code {
+      get { return code_; }
+      set {
+        code_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Payload" field.</summary>
+    public const int PayloadFieldNumber = 2;
+    private pb::ByteString payload_ = pb::ByteString.Empty;
+    /// <summary>
+    ///TODO: change to dictionary alternatively
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Payload {
+      get { return payload_; }
+      set {
+        payload_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as EventData);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(EventData other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Code != other.Code) return false;
+      if (Payload != other.Payload) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Code != global::Networking.Protobuf.CommunicationProtocol.EventCode.Joined) hash ^= Code.GetHashCode();
+      if (Payload.Length != 0) hash ^= Payload.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Code != global::Networking.Protobuf.CommunicationProtocol.EventCode.Joined) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Code);
+      }
+      if (Payload.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteBytes(Payload);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Code != global::Networking.Protobuf.CommunicationProtocol.EventCode.Joined) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Code);
+      }
+      if (Payload.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Payload);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(EventData other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Code != global::Networking.Protobuf.CommunicationProtocol.EventCode.Joined) {
+        Code = other.Code;
+      }
+      if (other.Payload.Length != 0) {
+        Payload = other.Payload;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Code = (global::Networking.Protobuf.CommunicationProtocol.EventCode) input.ReadEnum();
+            break;
+          }
+          case 18: {
             Payload = input.ReadBytes();
             break;
           }
@@ -643,7 +432,7 @@ namespace Networking.Protobuf.CommunicationProtocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Networking.Protobuf.CommunicationProtocol.CommunicationProtocolReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Networking.Protobuf.CommunicationProtocol.CommunicationProtocolReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

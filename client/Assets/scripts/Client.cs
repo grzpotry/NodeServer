@@ -36,24 +36,18 @@ namespace Domain
                 ProtocolVersion = 1
             };
 
-            await SendRequestAsync(handshake, RequestCode.Handshake);
+            await SendRequestAsync(handshake, OperationRequestCode.Handshake);
         }
 
-        private async Task SendRequestAsync(IMessage message, RequestCode code)
+        private async Task SendRequestAsync(IMessage message, OperationRequestCode code)
         {
-            var header = new Header()
+            var request = new OperationRequest()
             {
-                PayloadSize = message.CalculateSize()
-            };
-
-            var request = new Request()
-            {
-                Header = header,
+                RequestCode = code,
                 Payload = message.ToByteString(),
-                RequestCode = code
             };
 
-            Debug.Log($"Payload size: {header.PayloadSize} Request size: {request.CalculateSize()}");
+            Debug.Log($"Sent request {code} Payload size: {message.CalculateSize()} Request size: {request.CalculateSize()}");
             await Task.Run(() => request.WriteTo(_stream));
         }
 

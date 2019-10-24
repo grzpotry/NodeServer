@@ -2,40 +2,44 @@ syntax = "proto3";
 package CommunicationProtocol;
 option csharp_namespace = "Networking.Protobuf.CommunicationProtocol";
 
-enum RequestCode
+enum CommandType
+{
+    OpRequest = 0;
+    OpResponse = 1;
+    Event = 2;
+}
+
+enum EventCode
+{
+    Joined = 0;
+    Left = 1;
+}
+
+enum OperationRequestCode
 {
     Handshake = 0;
-    Login = 1;
-    Register = 2;
+    RaiseEvent = 1;
 }
 
-enum ResponseCode
+enum OperationResponseCode
 {
-    Success = 0;
-    InvalidProtocol = 1;
-    InvalidLogin = 2;
-    InvalidPassword = 3;
-};
-
-message Header
-{
-    int32 PayloadSize = 1;
+    InvalidProtocol = 0;
+    InvalidLogin = 1;
+    InvalidPassword = 2;
 }
 
-message Response
+message OperationRequest
 {
-    Header Header = 01;
-    RequestCode RequestCode = 2;
-    ResponseCode ResponseCode = 3;
-    string ErrorMessage = 4;
-    bytes Payload = 5;
-}
-
-message Request
-{
-    Header Header = 1;
-    RequestCode RequestCode = 2;
+    OperationRequestCode RequestCode = 1;
+    OperationResponseCode ResponseCode = 2;
     bytes Payload = 3;
+}
+
+message EventData
+{
+    //TODO: sender (server or other client)
+    EventCode Code = 1;
+    bytes Payload = 2; //TODO: change to dictionary alternatively
 }
 
 message HandshakePayload
