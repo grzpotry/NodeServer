@@ -1,4 +1,4 @@
-// source: CommunicationProtocol.proto
+// source: communication_protocol.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -114,8 +114,8 @@ proto.CommunicationProtocol.OperationRequest.prototype.toObject = function(opt_i
  */
 proto.CommunicationProtocol.OperationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    requestcode: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    responsecode: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    requestCode: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    responseCode: jspb.Message.getFieldWithDefault(msg, 2, 0),
     payload: msg.getPayload_asB64()
   };
 
@@ -155,11 +155,11 @@ proto.CommunicationProtocol.OperationRequest.deserializeBinaryFromReader = funct
     switch (field) {
     case 1:
       var value = /** @type {!proto.CommunicationProtocol.OperationRequestCode} */ (reader.readEnum());
-      msg.setRequestcode(value);
+      msg.setRequestCode(value);
       break;
     case 2:
       var value = /** @type {!proto.CommunicationProtocol.OperationResponseCode} */ (reader.readEnum());
-      msg.setResponsecode(value);
+      msg.setResponseCode(value);
       break;
     case 3:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
@@ -194,14 +194,14 @@ proto.CommunicationProtocol.OperationRequest.prototype.serializeBinary = functio
  */
 proto.CommunicationProtocol.OperationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRequestcode();
+  f = message.getRequestCode();
   if (f !== 0.0) {
     writer.writeEnum(
       1,
       f
     );
   }
-  f = message.getResponsecode();
+  f = message.getResponseCode();
   if (f !== 0.0) {
     writer.writeEnum(
       2,
@@ -219,10 +219,10 @@ proto.CommunicationProtocol.OperationRequest.serializeBinaryToWriter = function(
 
 
 /**
- * optional OperationRequestCode RequestCode = 1;
+ * optional OperationRequestCode request_code = 1;
  * @return {!proto.CommunicationProtocol.OperationRequestCode}
  */
-proto.CommunicationProtocol.OperationRequest.prototype.getRequestcode = function() {
+proto.CommunicationProtocol.OperationRequest.prototype.getRequestCode = function() {
   return /** @type {!proto.CommunicationProtocol.OperationRequestCode} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -231,16 +231,16 @@ proto.CommunicationProtocol.OperationRequest.prototype.getRequestcode = function
  * @param {!proto.CommunicationProtocol.OperationRequestCode} value
  * @return {!proto.CommunicationProtocol.OperationRequest} returns this
  */
-proto.CommunicationProtocol.OperationRequest.prototype.setRequestcode = function(value) {
+proto.CommunicationProtocol.OperationRequest.prototype.setRequestCode = function(value) {
   return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
 /**
- * optional OperationResponseCode ResponseCode = 2;
+ * optional OperationResponseCode response_code = 2;
  * @return {!proto.CommunicationProtocol.OperationResponseCode}
  */
-proto.CommunicationProtocol.OperationRequest.prototype.getResponsecode = function() {
+proto.CommunicationProtocol.OperationRequest.prototype.getResponseCode = function() {
   return /** @type {!proto.CommunicationProtocol.OperationResponseCode} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -249,13 +249,13 @@ proto.CommunicationProtocol.OperationRequest.prototype.getResponsecode = functio
  * @param {!proto.CommunicationProtocol.OperationResponseCode} value
  * @return {!proto.CommunicationProtocol.OperationRequest} returns this
  */
-proto.CommunicationProtocol.OperationRequest.prototype.setResponsecode = function(value) {
+proto.CommunicationProtocol.OperationRequest.prototype.setResponseCode = function(value) {
   return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
 /**
- * optional bytes Payload = 3;
+ * optional bytes payload = 3;
  * @return {!(string|Uint8Array)}
  */
 proto.CommunicationProtocol.OperationRequest.prototype.getPayload = function() {
@@ -264,7 +264,7 @@ proto.CommunicationProtocol.OperationRequest.prototype.getPayload = function() {
 
 
 /**
- * optional bytes Payload = 3;
+ * optional bytes payload = 3;
  * This is a type-conversion wrapper around `getPayload()`
  * @return {string}
  */
@@ -275,7 +275,7 @@ proto.CommunicationProtocol.OperationRequest.prototype.getPayload_asB64 = functi
 
 
 /**
- * optional bytes Payload = 3;
+ * optional bytes payload = 3;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getPayload()`
@@ -421,7 +421,7 @@ proto.CommunicationProtocol.EventData.serializeBinaryToWriter = function(message
 
 
 /**
- * optional EventCode Code = 1;
+ * optional EventCode code = 1;
  * @return {!proto.CommunicationProtocol.EventCode}
  */
 proto.CommunicationProtocol.EventData.prototype.getCode = function() {
@@ -439,7 +439,7 @@ proto.CommunicationProtocol.EventData.prototype.setCode = function(value) {
 
 
 /**
- * optional bytes Payload = 2;
+ * optional bytes payload = 2;
  * @return {!(string|Uint8Array)}
  */
 proto.CommunicationProtocol.EventData.prototype.getPayload = function() {
@@ -448,7 +448,7 @@ proto.CommunicationProtocol.EventData.prototype.getPayload = function() {
 
 
 /**
- * optional bytes Payload = 2;
+ * optional bytes payload = 2;
  * This is a type-conversion wrapper around `getPayload()`
  * @return {string}
  */
@@ -459,7 +459,7 @@ proto.CommunicationProtocol.EventData.prototype.getPayload_asB64 = function() {
 
 
 /**
- * optional bytes Payload = 2;
+ * optional bytes payload = 2;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getPayload()`
@@ -512,7 +512,7 @@ proto.CommunicationProtocol.HandshakePayload.prototype.toObject = function(opt_i
  */
 proto.CommunicationProtocol.HandshakePayload.toObject = function(includeInstance, msg) {
   var f, obj = {
-    protocolversion: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    protocolVersion: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -551,7 +551,7 @@ proto.CommunicationProtocol.HandshakePayload.deserializeBinaryFromReader = funct
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setProtocolversion(value);
+      msg.setProtocolVersion(value);
       break;
     default:
       reader.skipField();
@@ -582,7 +582,7 @@ proto.CommunicationProtocol.HandshakePayload.prototype.serializeBinary = functio
  */
 proto.CommunicationProtocol.HandshakePayload.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getProtocolversion();
+  f = message.getProtocolVersion();
   if (f !== 0) {
     writer.writeUint32(
       1,
@@ -593,10 +593,10 @@ proto.CommunicationProtocol.HandshakePayload.serializeBinaryToWriter = function(
 
 
 /**
- * optional uint32 ProtocolVersion = 1;
+ * optional uint32 protocol_version = 1;
  * @return {number}
  */
-proto.CommunicationProtocol.HandshakePayload.prototype.getProtocolversion = function() {
+proto.CommunicationProtocol.HandshakePayload.prototype.getProtocolVersion = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -605,7 +605,7 @@ proto.CommunicationProtocol.HandshakePayload.prototype.getProtocolversion = func
  * @param {number} value
  * @return {!proto.CommunicationProtocol.HandshakePayload} returns this
  */
-proto.CommunicationProtocol.HandshakePayload.prototype.setProtocolversion = function(value) {
+proto.CommunicationProtocol.HandshakePayload.prototype.setProtocolVersion = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -614,8 +614,8 @@ proto.CommunicationProtocol.HandshakePayload.prototype.setProtocolversion = func
  * @enum {number}
  */
 proto.CommunicationProtocol.CommandType = {
-  OPREQUEST: 0,
-  OPRESPONSE: 1,
+  OP_REQUEST: 0,
+  OP_RESPONSE: 1,
   EVENT: 2
 };
 
@@ -632,16 +632,16 @@ proto.CommunicationProtocol.EventCode = {
  */
 proto.CommunicationProtocol.OperationRequestCode = {
   HANDSHAKE: 0,
-  RAISEEVENT: 1
+  RAISE_EVENT: 1
 };
 
 /**
  * @enum {number}
  */
 proto.CommunicationProtocol.OperationResponseCode = {
-  INVALIDPROTOCOL: 0,
-  INVALIDLOGIN: 1,
-  INVALIDPASSWORD: 2
+  INVALID_PROTOCOL: 0,
+  INVALID_LOGIN: 1,
+  INVALID_PASSWORD: 2
 };
 
 goog.object.extend(exports, proto.CommunicationProtocol);

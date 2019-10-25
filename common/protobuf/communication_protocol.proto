@@ -1,0 +1,56 @@
+//Style conventions https://developers.google.com/protocol-buffers/docs/style
+// This is particulary important when generating javascript code with typescript definitions. Generated javascript code styling will follow these guidelines, but typescript definitions will be compatible with 
+//message name - CamelCase
+//field name - under_score
+//enum name - CamelCase
+//enum value - CAPITALS_UNDERSCORE
+
+
+syntax = "proto3";
+package CommunicationProtocol;
+option csharp_namespace = "Networking.Protobuf.CommunicationProtocol";
+
+enum CommandType
+{
+    OP_REQUEST = 0;
+    OP_RESPONSE = 1;
+    EVENT = 2;
+}
+
+enum EventCode
+{
+    JOINED = 0;
+    LEFT = 1;
+}
+
+enum OperationRequestCode
+{
+    HANDSHAKE = 0;
+    RAISE_EVENT = 1;
+}
+
+enum OperationResponseCode
+{
+    INVALID_PROTOCOL = 0;
+    INVALID_LOGIN = 1;
+    INVALID_PASSWORD = 2;
+}
+
+message OperationRequest
+{
+    OperationRequestCode request_code = 1;
+    OperationResponseCode response_code = 2;
+    bytes payload = 3;
+}
+
+message EventData
+{
+    //TODO: sender (server or other client)
+    EventCode code = 1;
+    bytes payload = 2; //TODO: change to dictionary alternatively
+}
+
+message HandshakePayload
+{
+    uint32 protocol_version = 1;
+}
