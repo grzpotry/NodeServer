@@ -38,15 +38,10 @@ var server = net.Server(function (socket: any)
     socket.on('data', function (data: any)
     {
         var rawMessage = protocol.OperationRequest.deserializeBinary(data);
-        var request: any = rawMessage.toObject();
-        //CommunicationProtocol.OperationRequest except any
+        //TODO: calling toObject should not be necessary because we already get valid prototype of OperationRequest, we just need to generate appropriate interface with getters and setters
+        //currently generated .d.ts interfaces are not compatible with generated .js prototypes
 
         //TODO: while style is mistmatched with generated code? (generated field name is in camelCase)
-        if (request.requestCode == protocol.OperationRequestCode.Handshake)
-        {
-            console.log(`received HANDSHAKE`)
-        }
-        console.log(`received code: ${request.requestCode}`)
         console.log(`received ${data}`)
         socket.write('Hello baby, do you wanna play the game ?');
     });
