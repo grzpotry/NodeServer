@@ -96,36 +96,55 @@ function HandleOperationRequest(operationRequest: any, socket: any, callback?: E
     switch (requestCode)
     {
         case protocol.OperationRequestCode.HANDSHAKE:
-            return HandleHandshake(operationRequest, socket);
+            var handshakePayload = protocol.HandshakePayload.deserializeBinary(operationRequest.getPayload());
+            var handshakeHandler: HandshakeHandler = new HandshakeHandler(handshakePayload, socket);
+            return handshakeHandler.Handle(requestCode);
         default:
             throw new Error(`Not supported request code: ${requestCode}`);
     }
-}
-
-//TODO: handshake should be static typed
-function HandleHandshake(opRequest: any, socket: any): Promise<OperationResponse>
-{
-    var handshake = protocol.HandshakePayload.deserializeBinary(opRequest.getPayload());
-    //TODO: Unify creating responses
-    var responseBody: protocol.OperationResponse = new protocol.OperationResponse();
-    var response: any = new OperationResponse(socket, responseBody);
-
-    responseBody.setRequestCode(opRequest.getRequestCode());
-
-    if (protocolVersion !== handshake.getProtocolVersion())
-    {
-        responseBody.setResponseCode(protocol.OperationResponseCode.INVALID_PROTOCOL);
-        return Promise.resolve(response);
-    }
-
-    responseBody.setResponseCode(protocol.OperationResponseCode.HANDSHAKE_SUCCESS);
-    return Promise.resolve(response);
 }
 
 function SendOperationResponse(response: OperationResponse)
 {
     console.log(`sending response for request ${response.body.getRequestCode()}`);
     response.socket.write(response.body.serializeBinary());
+}
+
+abstract class RequestHandler<T>
+{
+    protected payload: T;
+    socket: Socket;
+
+    constructor(payload: T, socket: Socket)
+    {
+        this.payload = payload;
+        this.socket = socket;
+    }
+
+    protected abstract OnHandle(response: OperationResponse): Promise<OperationResponse>;
+
+    Handle(requestCode: protocol.OperationRequestCode): Promise<OperationResponse>
+    {
+        var responseBody: protocol.OperationResponse = new protocol.OperationResponse();
+        var response: any = new OperationResponse(this.socket, responseBody);
+        responseBody.setRequestCode(requestCode);
+        return this.OnHandle(response);
+    }
+}
+
+class HandshakeHandler extends RequestHandler<protocol.HandshakePayload>
+{
+    OnHandle(response: OperationResponse)
+    {
+        if (protocolVersion !== this.payload.getProtocolVersion())
+        {
+            response.body.setResponseCode(protocol.OperationResponseCode.INVALID_PROTOCOL);
+            return Promise.resolve(response);
+        }
+
+        response.body.setResponseCode(protocol.OperationResponseCode.HANDSHAKE_SUCCESS);
+        return Promise.resolve(response);
+    }
 }
 
 class OperationResponse
