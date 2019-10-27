@@ -19,7 +19,13 @@ declare namespace CommunicationProtocol {
         INVALID_PROTOCOL = "INVALID_PROTOCOL",
         INVALID_LOGIN = "INVALID_LOGIN",
         INVALID_PASSWORD = "INVALID_PASSWORD",
+        HANDSHAKE_SUCCESS = "HANDSHAKE_SUCCESS",
     }
+    export interface Command {
+        type?: CommandType;
+        payload?: Uint8Array;
+    }
+
     export interface OperationRequest {
         request_code?: OperationRequestCode;
         response_code?: OperationResponseCode;

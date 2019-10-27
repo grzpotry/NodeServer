@@ -1,10 +1,8 @@
 //Style conventions https://developers.google.com/protocol-buffers/docs/style
-// This is particulary important when generating javascript code with typescript definitions. Generated javascript code styling will follow these guidelines, but typescript definitions will be compatible with 
 //message name - CamelCase
 //field name - under_score
 //enum name - CamelCase
 //enum value - CAPITALS_UNDERSCORE
-
 
 syntax = "proto3";
 package CommunicationProtocol;
@@ -34,6 +32,13 @@ enum OperationResponseCode
     INVALID_PROTOCOL = 0;
     INVALID_LOGIN = 1;
     INVALID_PASSWORD = 2;
+	HANDSHAKE_SUCCESS = 3;
+}
+
+message Command
+{
+	CommandType type = 1;
+	bytes payload = 2;
 }
 
 message OperationRequest

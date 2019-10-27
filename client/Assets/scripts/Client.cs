@@ -46,9 +46,19 @@ namespace Domain
                 RequestCode = code,
                 Payload = message.ToByteString(),
             };
+            await SendCommandAsync(CommandType.OpRequest, request);
+        }
 
-            Debug.Log($"Sent request {code} Payload size: {message.CalculateSize()} Request size: {request.CalculateSize()}");
-            await Task.Run(() => request.WriteTo(_stream));
+        private async Task SendCommandAsync(CommandType type, IMessage payload)
+        {
+            var command = new Command()
+            {
+                Type = type,
+                Payload = payload.ToByteString()
+            };
+
+            Debug.Log($"Sent command {type} Payload size: {command.CalculateSize()} Payload size: {payload.CalculateSize()}");
+            await Task.Run(() => command.WriteTo(_stream));
         }
 
         public void Update()
@@ -99,6 +109,8 @@ namespace Domain
                 int receivedBytes = await _stream.ReadAsync(_bundleBuffer, 0, _bundleBuffer.Length);
                 _bundle.AddRange(_bundleBuffer.Take(receivedBytes));
             }
+
+            //TODO: deserialize protobuf message
 
             var message = Encoding.ASCII.GetString(_bundle.ToArray()); //TODO: very inefficient allocation
             Debug.Log($"Received total {_bundle.Count} bytes message: {message}");
