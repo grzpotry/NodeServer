@@ -44,6 +44,12 @@ message Command
 message OperationRequest
 {
     OperationRequestCode request_code = 1;
+    bytes payload = 2;
+}
+
+message OperationResponse
+{
+    OperationRequestCode request_code = 1;
     OperationResponseCode response_code = 2;
     bytes payload = 3;
 }

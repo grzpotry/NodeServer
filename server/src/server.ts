@@ -7,6 +7,7 @@ var protobuf = require("protobufjs");
 //CommunicationProtocol.js contains protobuf generated classes with protocol structures
 //CommunicationProtocol.d.ts contains interfaces for static-typing purposes
 import * as protocol from "./generated/communication_protocol_pb";
+import { Socket } from "net";
 
 //TODO: serializacja i deserializacja eventów i operacji - IProtocol + Protocol18 - referencje z photona + notki z evernote
 var tempPayload: CommunicationProtocol.HandshakePayload = new protocol.HandshakePayload()
@@ -96,9 +97,6 @@ function HandleOperationRequest(operationRequest: any, socket: any, callback?: E
     {
         case protocol.OperationRequestCode.HANDSHAKE:
             return HandleHandshake(operationRequest, socket);
-
-        case protocol.OperationRequestCode.RAISE_EVENT:
-            return HandleRaiseEvent(operationRequest);
         default:
             throw new Error(`Not supported request code: ${requestCode}`);
     }
@@ -109,41 +107,35 @@ function HandleHandshake(opRequest: any, socket: any): Promise<OperationResponse
 {
     var handshake = protocol.HandshakePayload.deserializeBinary(opRequest.getPayload());
     //TODO: Unify creating responses
-    var request: protocol.OperationRequest = new protocol.OperationRequest();
-    var response: any = new OperationResponse(socket, request);
+    var responseBody: protocol.OperationResponse = new protocol.OperationResponse();
+    var response: any = new OperationResponse(socket, responseBody);
 
-    request.setRequestCode(opRequest.getRequestCode());
+    responseBody.setRequestCode(opRequest.getRequestCode());
 
     if (protocolVersion !== handshake.getProtocolVersion())
     {
-        request.setResponseCode(protocol.OperationResponseCode.INVALID_PROTOCOL);
+        responseBody.setResponseCode(protocol.OperationResponseCode.INVALID_PROTOCOL);
         return Promise.resolve(response);
     }
 
-    request.setResponseCode(protocol.OperationResponseCode.HANDSHAKE_SUCCESS);
+    responseBody.setResponseCode(protocol.OperationResponseCode.HANDSHAKE_SUCCESS);
     return Promise.resolve(response);
-}
-
-//TODO: raise event should be static typed
-function HandleRaiseEvent(raiseEvent: any): Promise<OperationResponse>
-{
-    //TODO:
-    return Promise.resolve(new OperationResponse(null, null));
 }
 
 function SendOperationResponse(response: OperationResponse)
 {
-    response.socket.write(response.request.serializeBinary());
+    console.log(`sending response for request ${response.body.getRequestCode()}`);
+    response.socket.write(response.body.serializeBinary());
 }
 
 class OperationResponse
 {
-    socket: any;
-    request: protocol.OperationRequest;
+    socket: Socket;
+    body: protocol.OperationResponse;
 
-    constructor(socket: any, request: protocol.OperationRequest)
+    constructor(socket: Socket, body: protocol.OperationResponse)
     {
-        this.request = request;
+        this.body = body;
         this.socket = socket;
     }
 }

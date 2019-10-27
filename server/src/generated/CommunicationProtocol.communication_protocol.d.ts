@@ -28,6 +28,11 @@ declare namespace CommunicationProtocol {
 
     export interface OperationRequest {
         request_code?: OperationRequestCode;
+        payload?: Uint8Array;
+    }
+
+    export interface OperationResponse {
+        request_code?: OperationRequestCode;
         response_code?: OperationResponseCode;
         payload?: Uint8Array;
     }
