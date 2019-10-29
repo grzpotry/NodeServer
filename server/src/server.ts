@@ -9,7 +9,7 @@ var protobuf = require("protobufjs");
 import * as protocol from "./generated/communication_protocol_pb";
 import { Socket } from "net";
 
-//TODO: serializacja i deserializacja eventów i operacji - IProtocol + Protocol18 - referencje z photona + notki z evernote
+//TODO: serializacja i deserializacja eventów i operacji - IProtocol + Protocol18 - referencje z photona + notki z evernot
 var tempPayload: CommunicationProtocol.HandshakePayload = new protocol.HandshakePayload()
 
 app.set('port', process.env.PORT || 3010);
@@ -52,12 +52,10 @@ var server = net.Server(function (socket: any)
             throw new Error(`Received not expected commant type: ${commandType}`);
         }
 
+
         var request = protocol.OperationRequest.deserializeBinary(command.getPayload());
         HandleOperationRequest(request, socket)
-            .then(SendOperationResponse, error => 
-            {
-                console.log("Failed to send operation response");
-            })
+            .then(SendOperationResponse)
             .catch(e => 
             {
                 console.log(`Error occured while processing operation request: ${e}`);
@@ -107,7 +105,10 @@ function HandleOperationRequest(operationRequest: any, socket: any, callback?: E
 function SendOperationResponse(response: OperationResponse)
 {
     console.log(`sending response for request ${response.body.getRequestCode()}`);
-    response.socket.write(response.body.serializeBinary());
+    var command: protocol.Command = new protocol.Command();
+    command.setType(protocol.CommandType.OP_RESPONSE);
+    command.setPayload(response.body.serializeBinary());
+    response.socket.write(command.serializeBinary());
 }
 
 abstract class RequestHandler<T>

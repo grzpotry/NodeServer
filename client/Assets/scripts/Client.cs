@@ -110,7 +110,16 @@ namespace Domain
                 _bundle.AddRange(_bundleBuffer.Take(receivedBytes));
             }
 
+
             //TODO: deserialize protobuf message
+            //TODO: Resolve incoming command basing on first byte
+           var firstByte =  _bundle.First();
+           Debug.LogError("FIRST BYTE " + firstByte);
+           if (firstByte == (byte)CommandType.OpResponse)
+           {
+               Debug.LogError("Response");
+           }
+
 
             var message = Encoding.ASCII.GetString(_bundle.ToArray()); //TODO: very inefficient allocation
             Debug.Log($"Received total {_bundle.Count} bytes message: {message}");
