@@ -7,7 +7,8 @@ var protobuf = require("protobufjs");
 //CommunicationProtocol.js contains protobuf generated classes with protocol structures
 //CommunicationProtocol.d.ts contains interfaces for static-typing purposes
 import * as protocol from "./generated/communication_protocol_pb";
-import { Socket } from "net";
+import { HandshakeHandler } from "./request_handlers/HandshakeHandler";
+import { OperationResponse } from "./OperationResponse";
 
 //TODO: serializacja i deserializacja eventów i operacji - IProtocol + Protocol18 - referencje z photona + notki z evernot
 var tempPayload: CommunicationProtocol.HandshakePayload = new protocol.HandshakePayload()
@@ -49,9 +50,8 @@ var server = net.Server(function (socket: any)
         var commandType = command.getType();
         if (commandType !== protocol.CommandType.OP_REQUEST)
         {
-            throw new Error(`Received not expected commant type: ${commandType}`);
+            throw new Error(`Received not expected command type: ${commandType}`);
         }
-
 
         var request = protocol.OperationRequest.deserializeBinary(command.getPayload());
         HandleOperationRequest(request, socket)
@@ -74,11 +74,9 @@ server.on('listening', function ()
 });
 
 let port = 3000;
-let protocolVersion = 1;
 server.listen(port);
 
 let clientSessions: Map<string, any> = new Map<string, any>();
-
 
 //TODO: It should be static typed, but for whatever reason  ts-protoc generates only interface definitions without appropriate getters and setters
 //currently generated .d.ts interfaces are not compatible with generated .js prototypes (mismatched camel case)
@@ -111,51 +109,3 @@ function SendOperationResponse(response: OperationResponse)
     response.socket.write(command.serializeBinary());
 }
 
-abstract class RequestHandler<T>
-{
-    protected payload: T;
-    socket: Socket;
-
-    constructor(payload: T, socket: Socket)
-    {
-        this.payload = payload;
-        this.socket = socket;
-    }
-
-    protected abstract OnHandle(response: OperationResponse): Promise<OperationResponse>;
-
-    Handle(requestCode: protocol.OperationRequestCode): Promise<OperationResponse>
-    {
-        var responseBody: protocol.OperationResponse = new protocol.OperationResponse();
-        var response: any = new OperationResponse(this.socket, responseBody);
-        responseBody.setRequestCode(requestCode);
-        return this.OnHandle(response);
-    }
-}
-
-class HandshakeHandler extends RequestHandler<protocol.HandshakePayload>
-{
-    OnHandle(response: OperationResponse)
-    {
-        if (protocolVersion !== this.payload.getProtocolVersion())
-        {
-            response.body.setResponseCode(protocol.OperationResponseCode.INVALID_PROTOCOL);
-            return Promise.resolve(response);
-        }
-
-        response.body.setResponseCode(protocol.OperationResponseCode.HANDSHAKE_SUCCESS);
-        return Promise.resolve(response);
-    }
-}
-
-class OperationResponse
-{
-    socket: Socket;
-    body: protocol.OperationResponse;
-
-    constructor(socket: Socket, body: protocol.OperationResponse)
-    {
-        this.body = body;
-        this.socket = socket;
-    }
-}

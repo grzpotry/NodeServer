@@ -22,7 +22,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc",
-    "prod": "tsc && node ./dist/src/server.js"
+    "prod": "tsc && node ./dist/src/Server.js"
   },
   "repository": {
     "type": "git",
