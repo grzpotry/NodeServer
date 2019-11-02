@@ -3,10 +3,12 @@ import { Config } from "../Config";
 import { OperationResponse } from "../OperationResponse";
 import * as protocol from "../generated/communication_protocol_pb";
 
+//Handles Handshake operation request
 export class HandshakeHandler extends RequestHandler<protocol.HandshakePayload> {
-    OnHandle(response: OperationResponse)
+    OnHandle(serializedPayload: any, response: OperationResponse)
     {
-        if (Config.ProtocolVersion !== this.payload.getProtocolVersion())
+        var payload: protocol.HandshakePayload = protocol.HandshakePayload.deserializeBinary(serializedPayload);
+        if (Config.ProtocolVersion !== payload.getProtocolVersion())
         {
             response.body.setResponseCode(protocol.OperationResponseCode.INVALID_PROTOCOL);
             return Promise.resolve(response);

@@ -1,4 +1,3 @@
-
 var app = require('./app');
 var net = require('net');
 var fs: File = require('fs');
@@ -7,8 +6,8 @@ var protobuf = require("protobufjs");
 //CommunicationProtocol.js contains protobuf generated classes with protocol structures
 //CommunicationProtocol.d.ts contains interfaces for static-typing purposes
 import * as protocol from "./generated/communication_protocol_pb";
-import { HandshakeHandler } from "./request_handlers/HandshakeHandler";
 import { OperationResponse } from "./OperationResponse";
+import { RequestHandlerProvider } from "./request_handlers/RequestHandlerProvider";
 
 //TODO: serializacja i deserializacja eventów i operacji - IProtocol + Protocol18 - referencje z photona + notki z evernot
 var tempPayload: CommunicationProtocol.HandshakePayload = new protocol.HandshakePayload()
@@ -19,7 +18,6 @@ const appServer = app.listen(app.get('port'), () =>
 {
     console.log(`Application listening on  ${appServer.address().port}`);
 });
-
 
 var connectedSockets: any[] = [];
 
@@ -77,27 +75,20 @@ let port = 3000;
 server.listen(port);
 
 let clientSessions: Map<string, any> = new Map<string, any>();
+let requestHandlerProvider: RequestHandlerProvider = new RequestHandlerProvider();
 
 //TODO: It should be static typed, but for whatever reason  ts-protoc generates only interface definitions without appropriate getters and setters
 //currently generated .d.ts interfaces are not compatible with generated .js prototypes (mismatched camel case)
 function HandleOperationRequest(operationRequest: any, socket: any, callback?: Error): Promise<OperationResponse>
 {
     var requestCode = operationRequest.getRequestCode();
-
     if (requestCode == undefined)
     {
         throw new Error(`Undefined request code`);
     }
 
-    switch (requestCode)
-    {
-        case protocol.OperationRequestCode.HANDSHAKE:
-            var handshakePayload = protocol.HandshakePayload.deserializeBinary(operationRequest.getPayload());
-            var handshakeHandler: HandshakeHandler = new HandshakeHandler(handshakePayload, socket);
-            return handshakeHandler.Handle(requestCode);
-        default:
-            throw new Error(`Not supported request code: ${requestCode}`);
-    }
+    var requestHandler = requestHandlerProvider.GetHandler(requestCode);
+    return requestHandler.Handle(operationRequest.getPayload(), socket, requestCode);
 }
 
 function SendOperationResponse(response: OperationResponse)

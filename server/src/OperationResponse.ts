@@ -1,5 +1,7 @@
 import { Socket } from "net";
 import * as protocol from "./generated/communication_protocol_pb";
+
+//Wraps operation response which is sent to client
 export class OperationResponse
 {
     socket: Socket;
