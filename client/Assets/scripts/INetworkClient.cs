@@ -3,10 +3,10 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public interface IClient: IDisposable
+    public interface INetworkClient: IDisposable
     {
-        event Action<IClient> Connected;
-        event Action<IClient> Disconnected;
+        event Action<INetworkClient> Connected;
+        event Action<INetworkClient> Disconnected;
 
         bool IsConnected { get; }
 

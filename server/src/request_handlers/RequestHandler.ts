@@ -10,6 +10,7 @@ export abstract class RequestHandler<T>
         var responseBody: protocol.OperationResponse = new protocol.OperationResponse();
         var response: any = new OperationResponse(socket, responseBody);
         responseBody.setRequestCode(requestCode);
+        //TODO: if interface for IMessage would be appropriatery generated, it could be used to deserialize payload here in base class except derived classes
         return this.OnHandle(serializedPayload, response);
     }
 

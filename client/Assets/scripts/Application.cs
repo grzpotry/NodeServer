@@ -7,7 +7,7 @@ namespace Domain
     {
         protected void Start()
         {
-            _localClient = new Client();
+            _localClient = new NetworkClient();
 
             try
             {
@@ -34,7 +34,7 @@ namespace Domain
             GUI.Label(new Rect(10, 10, 200, 50), $"Connected: {_localClient.IsConnected}");
         }
 
-        private IClient _localClient;
+        private INetworkClient _localClient;
         private const string ServerAdress = "127.0.0.1";
         private const int Port = 3000;
     }
