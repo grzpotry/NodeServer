@@ -16,7 +16,6 @@ namespace Networking
         bool IsConnected { get; }
 
         Task ConnectWithHostAsync();
-        void Update();
 
         Task SendRequestAsync(IMessage message, OperationRequestCode code);
     }

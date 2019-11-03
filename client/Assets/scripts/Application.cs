@@ -1,5 +1,6 @@
 using System;
 using Networking;
+using Networking.Protobuf.CommunicationProtocol;
 using UnityEngine;
 
 namespace Domain
@@ -22,7 +23,11 @@ namespace Domain
 
         private void Update()
         {
-            _localClient.Update();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                //TEMP;
+                _localClient.SendRequestAsync(new HandshakePayload() {ProtocolVersion = 1}, OperationRequestCode.Handshake);
+            }
         }
 
         protected void OnDestroy()

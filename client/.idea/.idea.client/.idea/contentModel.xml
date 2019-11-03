@@ -8,15 +8,17 @@
       <e p="Assets" t="Include">
         <e p="scripts" t="Include">
           <e p="Application.cs" t="Include" />
-          <e p="Client.cs" t="Include" />
           <e p="EditorMenuUtils.cs" t="Include" />
-          <e p="IClient.cs" t="Include" />
           <e p="Networking" t="Include">
+            <e p="BaseNetworkClient.cs" t="Include" />
+            <e p="ConnectionInfo.cs" t="Include" />
             <e p="generated" t="Include">
               <e p="communication_protocol" t="Include">
                 <e p="CommunicationProtocol.cs" t="Include" />
               </e>
             </e>
+            <e p="INetworkClient.cs" t="Include" />
+            <e p="NetworkClient.cs" t="Include" />
           </e>
         </e>
       </e>
