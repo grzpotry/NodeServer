@@ -7,12 +7,16 @@ using Networking.Protobuf.CommunicationProtocol;
 using Google.Protobuf;
 using UnityEngine;
 
-namespace Domain
+namespace Networking
 {
-    public class NetworkClient : INetworkClient
+    /// <summary>
+    ///
+    /// </summary>
+    public abstract class BaseNetworkClient : INetworkClient, IDisposable
     {
         public event Action<INetworkClient> Connected;
         public event Action<INetworkClient> Disconnected;
+
         public bool IsConnected => _tcpClient.Connected;
 
         public void Dispose()
@@ -28,16 +32,6 @@ namespace Domain
             _tcpClient = null;
         }
 
-        public async Task SendHandshakeAsync()
-        {
-            var handshake = new HandshakePayload()
-            {
-                ProtocolVersion = 1
-            };
-
-            await SendRequestAsync(handshake, OperationRequestCode.Handshake);
-        }
-
         public void Update()
         {
             //TODO: move to another thread
@@ -47,7 +41,7 @@ namespace Domain
 
                 try
                 {
-                    ConnectWithHostAsync(_adress, _port);
+                    ConnectWithHostAsync();
                 }
                 catch (Exception e)
                 {
@@ -68,34 +62,7 @@ namespace Domain
             }
         }
 
-        public async Task ConnectWithHostAsync(string adress, int port)
-        {
-            _port = port;
-            _adress = adress;
-
-            if (_tcpClient.Connected)
-            {
-                Debug.LogError("Already connected");
-                return;
-            }
-
-            await _tcpClient.ConnectAsync(adress, port);
-            _stream = _tcpClient.GetStream();
-            await SendHandshakeAsync();
-        }
-
-        private const int ReconnectIntevalSeconds = 1;
-
-        private string _adress;
-        private int _port;
-        private float _lastReconnectionTime;
-        private NetworkStream _stream;
-        private TcpClient _tcpClient = new TcpClient();
-
-        private readonly List<byte> _bundle = new List<byte>();
-        private readonly byte[] _bundleBuffer = new byte[1024];
-
-        private async Task SendRequestAsync(IMessage message, OperationRequestCode code)
+        public async Task SendRequestAsync(IMessage message, OperationRequestCode code)
         {
             var request = new OperationRequest()
             {
@@ -106,6 +73,31 @@ namespace Domain
             Debug.Log($"Sending {CommandType.OpRequest} [{request.RequestCode}]");
             await SendCommandAsync(CommandType.OpRequest, request);
         }
+
+        public async Task ConnectWithHostAsync()
+        {
+            if (_tcpClient.Connected)
+            {
+                Debug.LogError("Already connected");
+                return;
+            }
+
+            await _tcpClient.ConnectAsync(ConnectionInfo.IpAddress, ConnectionInfo.Port);
+            _stream = _tcpClient.GetStream();
+            await SendHandshakeAsync();
+        }
+
+        protected abstract ConnectionInfo ConnectionInfo { get; }
+        protected abstract Task HandleResponseAsync(OperationResponse response);
+        protected abstract Task HandleEventAsync(EventData eventData);
+
+        private const int ReconnectIntevalSeconds = 1;
+        private float _lastReconnectionTime;
+        private NetworkStream _stream;
+        private TcpClient _tcpClient = new TcpClient();
+
+        private readonly List<byte> _bundle = new List<byte>();
+        private readonly byte[] _bundleBuffer = new byte[1024];
 
         private async Task SendCommandAsync(CommandType type, IMessage payload)
         {
@@ -155,6 +147,17 @@ namespace Domain
             await HandleCommandAsync(command);
         }
 
+
+        private async Task SendHandshakeAsync()
+        {
+            var handshake = new HandshakePayload()
+            {
+                ProtocolVersion = 1
+            };
+
+            await SendRequestAsync(handshake, OperationRequestCode.Handshake);
+        }
+
         private async Task HandleCommandAsync(Command command)
         {
             switch (command.Type)
@@ -162,10 +165,12 @@ namespace Domain
                 case CommandType.OpResponse:
                     var response = OperationResponse.Parser.ParseFrom(command.Payload);
                     Debug.Log($"Received response [{response.ResponseCode}]");
+                    await HandleResponseAsync(response);
                     break;
                 case CommandType.Event:
                     var eventData = EventData.Parser.ParseFrom(command.Payload);
                     Debug.Log($"Received event [{eventData.Code}]");
+                    await HandleEventAsync(eventData);
                     break;
                 default:
                     throw new NotSupportedException(command.Type.ToString());

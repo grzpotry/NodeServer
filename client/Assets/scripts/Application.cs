@@ -1,4 +1,5 @@
 using System;
+using Networking;
 using UnityEngine;
 
 namespace Domain
@@ -11,7 +12,7 @@ namespace Domain
 
             try
             {
-                _localClient.ConnectWithHostAsync(ServerAdress, Port);
+                _localClient.ConnectWithHostAsync();
             }
             catch (Exception e)
             {
@@ -34,8 +35,6 @@ namespace Domain
             GUI.Label(new Rect(10, 10, 200, 50), $"Connected: {_localClient.IsConnected}");
         }
 
-        private INetworkClient _localClient;
-        private const string ServerAdress = "127.0.0.1";
-        private const int Port = 3000;
+        private NetworkClient _localClient;
     }
 }
