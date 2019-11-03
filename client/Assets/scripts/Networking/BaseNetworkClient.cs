@@ -23,13 +23,18 @@ namespace Networking
 
         public void Dispose()
         {
+            _cancelConnectionUpdateTokenSource.Cancel();
+
             if (_tcpClient == null)
             {
                 return;
             }
 
-            _cancelConnectionUpdateTokenSource.Dispose();
-            _tcpClient.Client.Disconnect(reuseSocket: false);
+            if (_tcpClient.Connected)
+            {
+                _tcpClient.Client.Disconnect(reuseSocket: false);
+            }
+
             _tcpClient.Close();
             _tcpClient.Dispose();
             _tcpClient = null;
@@ -45,7 +50,7 @@ namespace Networking
 
                     try
                     {
-                        Debug.Log("Attempting reconnection");
+                        Debug.LogWarning("Attempting reconnection");
                         ConnectWithHostAsync();
                     }
                     catch (Exception e)
