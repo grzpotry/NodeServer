@@ -9,11 +9,11 @@ namespace Domain
     {
         protected void Start()
         {
-            _localClient = new NetworkClient();
+            _localPeer = new Peer();
 
             try
             {
-                _localClient.ConnectWithHostAsync();
+                _localPeer.ConnectWithHostAsync();
             }
             catch (Exception e)
             {
@@ -26,20 +26,21 @@ namespace Domain
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 //TEMP;
-                _localClient.SendRequestAsync(new HandshakePayload() {ProtocolVersion = 1}, OperationRequestCode.Handshake);
+                _localPeer.SendRequestAsync(new HandshakePayload() {ProtocolVersion = 1},
+                    OperationRequestCode.Handshake);
             }
         }
 
         protected void OnDestroy()
         {
-            _localClient.Dispose();
+            _localPeer.Dispose();
         }
 
         protected void OnGUI()
         {
-            GUI.Label(new Rect(10, 10, 200, 50), $"Connected: {_localClient.IsConnected}");
+            GUI.Label(new Rect(10, 10, 200, 50), $"Connected: {_localPeer.IsConnected}");
         }
 
-        private NetworkClient _localClient;
+        private Peer _localPeer;
     }
 }

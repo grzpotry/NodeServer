@@ -1,7 +1,4 @@
-using System;
 using System.Threading.Tasks;
-using Google.Protobuf;
-using Networking.Protobuf.CommunicationProtocol;
 
 namespace Networking
 {
@@ -10,13 +7,9 @@ namespace Networking
     /// </summary>
     public interface INetworkClient
     {
-        event Action<INetworkClient> Connected;
-        event Action<INetworkClient> Disconnected;
-
-        bool IsConnected { get; }
-
-        Task ConnectWithHostAsync();
-
-        Task SendRequestAsync(IMessage message, OperationRequestCode code);
+        Task ConnectAsync();
+        Task ReconnectAsync();
+        void Disconnect(bool reuseSocket);
+        bool Connected { get; }
     }
 }

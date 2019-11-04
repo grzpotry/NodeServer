@@ -10,7 +10,8 @@
           <e p="Application.cs" t="Include" />
           <e p="EditorMenuUtils.cs" t="Include" />
           <e p="Networking" t="Include">
-            <e p="BaseNetworkClient.cs" t="Include" />
+            <e p="BasePeer.cs" t="Include" />
+            <e p="Connection.cs" t="Include" />
             <e p="ConnectionInfo.cs" t="Include" />
             <e p="generated" t="Include">
               <e p="communication_protocol" t="Include">
@@ -18,7 +19,10 @@
               </e>
             </e>
             <e p="INetworkClient.cs" t="Include" />
+            <e p="INetworkPeer.cs" t="Include" />
             <e p="NetworkClient.cs" t="Include" />
+            <e p="Peer.cs" t="Include" />
+            <e p="TcpClient.cs" t="Include" />
           </e>
         </e>
       </e>
