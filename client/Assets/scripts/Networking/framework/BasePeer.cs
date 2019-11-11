@@ -46,7 +46,15 @@ namespace Networking.Framework
         }
 
         protected abstract ConnectionInfo ConnectionInfo { get; }
+
+        /// <summary>
+        /// This method is called on background thread, so you cannot use unity-specific features here
+        /// </summary>
         protected abstract Task HandleResponseAsync(OperationResponse response);
+
+        /// <summary>
+        /// This method is called on background thread, so you cannot use unity-specific features here
+        /// </summary>
         protected abstract Task HandleEventAsync(EventData eventData);
 
         private Connection _connection;

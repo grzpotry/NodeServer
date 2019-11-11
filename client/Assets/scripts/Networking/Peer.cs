@@ -1,7 +1,9 @@
 using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
 using Networking.Framework;
 using Networking.Protobuf.CommunicationProtocol;
+using UnityEngine;
 
 namespace Networking
 {
@@ -10,20 +12,31 @@ namespace Networking
     /// </summary>
     public class Peer : BasePeer
     {
+        public Peer()
+        {
+            _unityThread = Thread.CurrentThread.ManagedThreadId;
+        }
+
         protected override ConnectionInfo ConnectionInfo { get; } =
             new ConnectionInfo(IPAddress.Parse(ServerAdress), Port);
 
-        protected override async Task HandleResponseAsync(OperationResponse response)
+        protected override Task HandleResponseAsync(OperationResponse response)
         {
-            // Debug.Log("H")
+            if (Thread.CurrentThread.ManagedThreadId != _unityThread)
+            {
+                Debug.LogError("TODO: [IMPLEMENT] : Handled response in non-unity thread.");
+            }
+
+            return Task.CompletedTask;
         }
 
-        protected override async Task HandleEventAsync(EventData eventData)
+        protected override Task HandleEventAsync(EventData eventData)
         {
-            //
+            return Task.CompletedTask;
         }
 
         private const string ServerAdress = "127.0.0.1";
         private const int Port = 3000;
+        private readonly int _unityThread;
     }
 }
