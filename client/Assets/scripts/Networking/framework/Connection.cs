@@ -54,6 +54,7 @@ namespace Networking.Framework
 
         public void Dispose()
         {
+            Debug.Log("Connection disposed");
             _isInited = false;
             _cancelUpdateTokenSource?.Cancel();
 
@@ -113,14 +114,14 @@ namespace Networking.Framework
         {
             while (!_cancelUpdateTokenSource.IsCancellationRequested)
             {
-                if (!IsEstablished && LifeTimeMs - _lastReconnectionTimeSeconds > ReconnectIntevalMs)
+                if (!_client.Connected && LifeTimeMs - _lastReconnectionTimeSeconds > ReconnectIntevalMs)
                 {
                     _lastReconnectionTimeSeconds = LifeTimeMs;
 
                     try
                     {
                         Debug.LogWarning("Attempting reconnect");
-                        await _client.ReconnectAsync();
+                        await _client.ReconnectAsync(_cancelUpdateTokenSource);
                     }
                     catch (Exception e)
                     {
