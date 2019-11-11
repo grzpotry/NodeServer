@@ -2,10 +2,10 @@ using System.Threading.Tasks;
 using Google.Protobuf;
 using Networking.Protobuf.CommunicationProtocol;
 
-namespace Networking
+namespace Networking.Framework
 {
     /// <summary>
-    ///
+    /// Peer which communicates with host
     /// </summary>
     public interface INetworkPeer
     {

@@ -1,13 +1,12 @@
-using System;
 using System.Net;
 using System.Threading.Tasks;
+using Networking.Framework;
 using Networking.Protobuf.CommunicationProtocol;
-using UnityEngine;
 
 namespace Networking
 {
     /// <summary>
-    ///
+    /// Peer for particular application. TODO: move to separate assembly with example application
     /// </summary>
     public class Peer : BasePeer
     {

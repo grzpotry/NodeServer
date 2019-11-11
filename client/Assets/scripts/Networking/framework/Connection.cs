@@ -7,10 +7,17 @@ using System.Threading;
 using System.Threading.Tasks;
 using Debug = UnityEngine.Debug;
 
-namespace Networking
+namespace Networking.Framework
 {
+    /// <summary>
+    ///
+    /// </summary>
     public class Connection : IDisposable
     {
+        /// <summary>
+        /// Delegate for handling data received from network
+        /// </summary>
+        /// <param name="data"></param>
         public delegate Task DataHandler(byte[] data);
 
         public bool IsEstablished => _client.Connected;

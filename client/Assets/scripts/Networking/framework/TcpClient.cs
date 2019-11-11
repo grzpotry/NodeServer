@@ -3,15 +3,15 @@ using System.Net.Sockets;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Networking
+namespace Networking.Framework
 {
     /// <summary>
     /// Wraps <see cref="System.Net.Sockets.TcpClient"/>
     /// </summary>
-    public class TcpClient : NetworkClient, IDisposable
+    public class TcpClient : IDisposable, INetworkClient
     {
-        public override NetworkStream NetworkStream => _client.GetStream();
-        public override bool Connected
+        public NetworkStream NetworkStream => _client.GetStream();
+        public bool Connected
         {
             get
             {
@@ -41,14 +41,12 @@ namespace Networking
             _info = info;
         }
 
-        readonly byte[] _connectionTestBuffer = new byte[1];
-
         public void Dispose()
         {
             Disconnect(reuseSocket: false);
         }
 
-        public override async Task ConnectAsync()
+        public async Task ConnectAsync()
         {
             if (Connected)
             {
@@ -59,13 +57,13 @@ namespace Networking
             Debug.Log($"Connected with {_info.IpAddress}:{_info.Port}");
         }
 
-        public override async Task ReconnectAsync()
+        public async Task ReconnectAsync()
         {
             Disconnect(reuseSocket: true);
             await ConnectAsync();
         }
 
-        public override void Disconnect(bool reuseSocket)
+        public void Disconnect(bool reuseSocket)
         {
             if (_client.Connected)
             {
@@ -77,6 +75,6 @@ namespace Networking
 
         private System.Net.Sockets.TcpClient _client;
         private readonly ConnectionInfo _info;
-        private readonly object _connectedLock = new object();
+        private readonly byte[] _connectionTestBuffer = new byte[1];
     }
 }

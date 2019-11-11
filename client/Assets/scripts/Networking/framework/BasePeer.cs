@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Networking.Protobuf.CommunicationProtocol;
 using Google.Protobuf;
-using UnityEngine;
+using Networking.Protobuf.CommunicationProtocol;
 using Debug = UnityEngine.Debug;
 
-namespace Networking
+namespace Networking.Framework
 {
     /// <summary>
-    ///
+    /// Peer which communicates with host via google protocol buffers
     /// </summary>
     public abstract class BasePeer : INetworkPeer, IDisposable
     {
