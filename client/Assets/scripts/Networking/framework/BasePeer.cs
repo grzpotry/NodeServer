@@ -2,6 +2,7 @@
 using System.Text;
 using System.Threading.Tasks;
 using Google.Protobuf;
+using Networking.Framework.Dispatchers;
 using Networking.Protobuf.CommunicationProtocol;
 using Debug = UnityEngine.Debug;
 
@@ -13,6 +14,21 @@ namespace Networking.Framework
     public abstract class BasePeer : INetworkPeer, IDisposable
     {
         public bool IsConnected => _connection.IsEstablished;
+
+        /// <summary>
+        /// <see cref="ImmediateDispatcher"/> will be used by default so messages from remote server can be handled
+        /// in background thread. Pass <see cref="IDispatcher"/> in overload constructor to override this behaviour.
+        /// </summary>
+        public BasePeer() :
+            this(new ImmediateDispatcher())
+        {
+        }
+
+        /// <param name="commandsDispatcher">Dispatcher for handling commands received from remote server</param>
+        public BasePeer(IDispatcher commandsDispatcher)
+        {
+            _commandsDispatcher = commandsDispatcher ?? throw new ArgumentNullException(nameof(commandsDispatcher));
+        }
 
         public void Dispose()
         {
@@ -50,16 +66,17 @@ namespace Networking.Framework
         /// <summary>
         /// This method is called on background thread, so you cannot use unity-specific features here
         /// </summary>
-        protected abstract Task HandleResponseAsync(OperationResponse response);
+        protected abstract void HandleResponse(OperationResponse response);
 
         /// <summary>
         /// This method is called on background thread, so you cannot use unity-specific features here
         /// </summary>
-        protected abstract Task HandleEventAsync(EventData eventData);
+        protected abstract void HandleEvent(EventData eventData);
 
         private Connection _connection;
+        private readonly IDispatcher _commandsDispatcher;
 
-        private async Task DataHandler(byte[] data)
+        private void DataHandler(byte[] data)
         {
             Command command;
             try
@@ -68,13 +85,14 @@ namespace Networking.Framework
             }
             catch (Exception e)
             {
-                Debug.LogError($"Exception occured while parsing command, received unexpected data: [{Encoding.ASCII.GetString(data)}]");
+                Debug.LogError(
+                    $"Exception occured while parsing command, received unexpected data: [{Encoding.ASCII.GetString(data)}]");
                 Debug.LogException(e);
                 return;
             }
 
             Debug.Log($"Received command [{command.Type}] [{command.CalculateSize()}B]");
-            await HandleCommandAsync(command);
+            _commandsDispatcher.Invoke(() => HandleCommand(command));
         }
 
         private async Task SendCommandAsync(CommandType type, IMessage payload)
@@ -106,19 +124,19 @@ namespace Networking.Framework
             await SendRequestAsync(handshake, OperationRequestCode.Handshake);
         }
 
-        private async Task HandleCommandAsync(Command command)
+        private void HandleCommand(Command command)
         {
             switch (command.Type)
             {
                 case CommandType.OpResponse:
                     var response = OperationResponse.Parser.ParseFrom(command.Payload);
                     Debug.Log($"Received response [{response.ResponseCode}]");
-                    await HandleResponseAsync(response);
+                    HandleResponse(response);
                     break;
                 case CommandType.Event:
                     var eventData = EventData.Parser.ParseFrom(command.Payload);
                     Debug.Log($"Received event [{eventData.Code}]");
-                    await HandleEventAsync(eventData);
+                    HandleEvent(eventData);
                     break;
                 default:
                     throw new NotSupportedException(command.Type.ToString());

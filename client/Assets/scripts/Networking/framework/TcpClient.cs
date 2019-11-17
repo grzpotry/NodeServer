@@ -51,7 +51,7 @@ namespace Networking.Framework
 
         public Task ConnectAsync()
         {
-            return ConnectAsyncInternal(null);
+            return ConnectAsyncInternal();
         }
 
         public Task ConnectAsync(CancellationTokenSource cancelTokenSource)

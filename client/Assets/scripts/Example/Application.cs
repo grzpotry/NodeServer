@@ -1,15 +1,21 @@
 using System;
-using Networking;
+using Networking.Framework;
+using Networking.Framework.Dispatchers;
 using Networking.Protobuf.CommunicationProtocol;
 using UnityEngine;
 
-namespace Domain
+namespace Example
 {
-    public class Application : MonoBehaviour
+    /// <summary>
+    /// Example application
+    /// </summary>
+    public class Application : MonoBehaviour, IUnityThreadListener
     {
+        public event Action Updated;
+
         protected void Start()
         {
-            _localPeer = new Peer();
+            _localPeer = new CustomPeer(unityListener: this);
 
             try
             {
@@ -21,7 +27,7 @@ namespace Domain
             }
         }
 
-        private void Update()
+        protected void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -29,6 +35,8 @@ namespace Domain
                 _localPeer.SendRequestAsync(new HandshakePayload() {ProtocolVersion = 1},
                     OperationRequestCode.Handshake);
             }
+
+            Updated?.Invoke();
         }
 
         protected void OnDestroy()
@@ -41,6 +49,6 @@ namespace Domain
             GUI.Label(new Rect(10, 10, 200, 50), $"Connected: {_localPeer.IsConnected}");
         }
 
-        private Peer _localPeer;
+        private ThreadSafePeer _localPeer;
     }
 }

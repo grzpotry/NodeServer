@@ -18,7 +18,7 @@ namespace Networking.Framework
         /// Delegate for handling data received from network
         /// </summary>
         /// <param name="data"></param>
-        public delegate Task DataHandler(byte[] data);
+        public delegate void DataHandler(byte[] data);
 
         public bool IsEstablished => _client.Connected;
         public NetworkStream Stream => _client.NetworkStream;
@@ -107,7 +107,7 @@ namespace Networking.Framework
             }
 
             //add unity thread safe handler
-            await _receivedDataHandler(_dataBundle.ToArray());
+            _receivedDataHandler(_dataBundle.ToArray());
         }
 
         private async void Update()
