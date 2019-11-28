@@ -8,13 +8,16 @@ var protobuf = require("protobufjs");
 import * as protocol from "./generated/communication_protocol_pb";
 import { OperationResponse } from "./OperationResponse";
 import { RequestHandlerProvider } from "./request_handlers/RequestHandlerProvider";
+import { Socket } from "net";
+import { Session } from "./Session";
 
 var server = net.Server(function (socket: any)
 {
     //TODO: identify client by id received during handshake
+    // clientSessions.set(clientId, socket);
 
     //Node automatically creates and send socket when client connects
-    socket.on('connection', function (socket: any)
+    socket.on('connection', function (socket: Socket)
     {
         console.log("Client connected");
     });
@@ -22,6 +25,7 @@ var server = net.Server(function (socket: any)
     //Data received from client
     socket.on('data', function (data: any)
     {
+        //TODO: check if client is part of current session
         console.log(`Received data: ${data}`)
         var command = protocol.Command.deserializeBinary(data);
 
@@ -59,7 +63,8 @@ server.on('listening', function ()
 let port = 3000;
 server.listen(port);
 
-let requestHandlerProvider: RequestHandlerProvider = new RequestHandlerProvider();
+let session: Session = new Session();
+let requestHandlerProvider: RequestHandlerProvider = new RequestHandlerProvider(session);
 
 //TODO: It should be static typed, but for whatever reason  ts-protoc generates only interface definitions without appropriate getters and setters
 //currently generated .d.ts interfaces are not compatible with generated .js prototypes (mismatched camel case)
