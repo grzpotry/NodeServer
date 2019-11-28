@@ -9,21 +9,9 @@ import * as protocol from "./generated/communication_protocol_pb";
 import { OperationResponse } from "./OperationResponse";
 import { RequestHandlerProvider } from "./request_handlers/RequestHandlerProvider";
 
-app.set('port', process.env.PORT || 3010);
-
-const appServer = app.listen(app.get('port'), () =>
-{
-    console.log(`Application listening on  ${appServer.address().port}`);
-});
-
-var connectedSockets: any[] = [];
-
 var server = net.Server(function (socket: any)
 {
-    var clientId = socket.remoteAddress + ":" + socket.remotePort;
     //TODO: identify client by id received during handshake
-    //TODO: establish protocol between client and server (header which indicates how to interpret message ? (eg. handshake, gamestate update etc.) - read about such protocols and existing solutions)
-    clientSessions.set(clientId, socket);
 
     //Node automatically creates and send socket when client connects
     socket.on('connection', function (socket: any)
@@ -71,7 +59,6 @@ server.on('listening', function ()
 let port = 3000;
 server.listen(port);
 
-let clientSessions: Map<string, any> = new Map<string, any>();
 let requestHandlerProvider: RequestHandlerProvider = new RequestHandlerProvider();
 
 //TODO: It should be static typed, but for whatever reason  ts-protoc generates only interface definitions without appropriate getters and setters
