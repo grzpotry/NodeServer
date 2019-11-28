@@ -9,12 +9,16 @@ import * as protocol from "./generated/communication_protocol_pb";
 import { OperationResponse } from "./OperationResponse";
 import { RequestHandlerProvider } from "./request_handlers/RequestHandlerProvider";
 import { Socket } from "net";
-import { SessionStore } from "./Session";
+import { Session } from "./Session";
 
 var server = net.Server(function (socket: any)
 {
     //TODO: identify client by id received during handshake
+<<<<<<< HEAD
+=======
+    //TODO: establish protocol between client and server (header which indicates how to interpret message ? (eg. handshake, gamestate update etc.) - read about such protocols and existing solutions)
     // clientSessions.set(clientId, socket);
+>>>>>>> parent of 1fd4513... Revert "Basic server session management [wip]"
 
     //Node automatically creates and send socket when client connects
     socket.on('connection', function (socket: Socket)
@@ -52,7 +56,6 @@ var server = net.Server(function (socket: any)
     socket.on('end', function ()
     {
         console.log("Client disconnected");
-        sessionStore.RemoveSession(socket);
     });
 });
 
@@ -64,8 +67,12 @@ server.on('listening', function ()
 let port = 3000;
 server.listen(port);
 
-let sessionStore: SessionStore = new SessionStore();
-let requestHandlerProvider: RequestHandlerProvider = new RequestHandlerProvider(sessionStore);
+<<<<<<< HEAD
+let requestHandlerProvider: RequestHandlerProvider = new RequestHandlerProvider();
+=======
+let session: Session = new Session();
+let requestHandlerProvider: RequestHandlerProvider = new RequestHandlerProvider(session);
+>>>>>>> parent of 1fd4513... Revert "Basic server session management [wip]"
 
 //TODO: It should be static typed, but for whatever reason  ts-protoc generates only interface definitions without appropriate getters and setters
 //currently generated .d.ts interfaces are not compatible with generated .js prototypes (mismatched camel case)
@@ -89,4 +96,5 @@ function SendOperationResponse(response: OperationResponse)
     command.setPayload(response.body.serializeBinary());
     response.socket.write(command.serializeBinary());
 }
+
 

@@ -1,28 +1,57 @@
 import { Socket } from "net";
 
 ///TODO: manages clients
-export class Session
+export class SessionStore
 {
-    public AddClient(client: Socket)
+    public AddSession(client: Socket)
     {
-        if (this.clients.has(client))
+        if (this.Exists(client))
         {
             console.log(`Client ${client.localAddress} already exists in session`);
             return;
         }
 
         console.log(`Client ${client.localAddress} added to session`)
-        this.clients.add(client);
+        this.sessions.add(new Session(client));
     }
 
-    public RemoveClient(client: Socket)
+    private Exists(client: Socket): boolean
     {
-        if (!this.clients.has(client))
+        return this.TryGetSession(client) != null;
+    }
+
+    private TryGetSession(client: Socket): Session | null
+    {
+        this.sessions.forEach(function (session)
+        {
+            if (session.Client == client)
+            {
+                return session;
+            }
+        });
+
+        return null;
+    }
+
+    public RemoveSession(client: Socket)
+    {
+        var session = this.TryGetSession(client);
+        if (session == null)
         {
             console.log(`Tried to remove client ${client.localAddress} which is not in session anymore`);
             return;
         }
-        this.clients.delete(client);
+        this.sessions.delete(session);
     }
-    private clients: Set<Socket> = new Set<Socket>();
+    private sessions: Set<Session> = new Set<Session>();
+}
+
+export class Session
+{
+    constructor(client: Socket)
+    {
+        this.Client = client;
+    }
+
+    public Client: Socket;
 }
