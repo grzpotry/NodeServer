@@ -2,7 +2,8 @@ import { RequestHandler } from "./RequestHandler";
 import { Config } from "../Config";
 import { OperationResponse } from "../OperationResponse";
 import * as protocol from "../generated/communication_protocol_pb";
-import { SessionStore } from "../Session";
+import { SessionStore, Session } from "../Session";
+import { Socket } from "net";
 
 //Handles Handshake operation request
 export class HandshakeHandler extends RequestHandler<protocol.HandshakePayload> {
@@ -12,7 +13,7 @@ export class HandshakeHandler extends RequestHandler<protocol.HandshakePayload> 
         this.sessionStore = session;
     }
 
-    OnHandle(serializedPayload: any, response: OperationResponse)
+    OnHandle(serializedPayload: any, socket: Socket, response: OperationResponse)
     {
         var payload: protocol.HandshakePayload = protocol.HandshakePayload.deserializeBinary(serializedPayload);
         if (Config.ProtocolVersion !== payload.getProtocolVersion())
@@ -21,7 +22,7 @@ export class HandshakeHandler extends RequestHandler<protocol.HandshakePayload> 
             return Promise.resolve(response);
         }
         response.body.setResponseCode(protocol.OperationResponseCode.HANDSHAKE_SUCCESS);
-        this.sessionStore.AddSession(response.socket);
+        this.sessionStore.AddSession(new Session(socket, this.sessionStore));
         return Promise.resolve(response);
     }
 

@@ -3,24 +3,24 @@ import { Socket } from "net";
 ///TODO: manages clients
 export class SessionStore
 {
-    public AddSession(client: Socket)
+    public AddSession(session: Session)
     {
-        if (this.Exists(client))
+        if (this.sessions.has(session))
         {
-            console.log(`Client ${client.localAddress} already exists in session`);
+            console.log(`Client ${session.Client.localAddress} session already exists `);
             return;
         }
 
-        console.log(`Client ${client.localAddress} added to session`)
-        this.sessions.add(new Session(client));
+        this.sessions.add(session);
+        console.log(`Added client ${session.Client.localAddress} session. Active sessions: ${this.sessions.size}`)
     }
 
-    private Exists(client: Socket): boolean
+    public Exists(client: Socket): boolean
     {
         return this.TryGetSession(client) != null;
     }
 
-    private TryGetSession(client: Socket): Session | null
+    public TryGetSession(client: Socket): Session | null
     {
         this.sessions.forEach(function (session)
         {
@@ -33,25 +33,74 @@ export class SessionStore
         return null;
     }
 
-    public RemoveSession(client: Socket)
+    public RemoveSession(client: Socket): boolean
     {
         var session = this.TryGetSession(client);
         if (session == null)
         {
-            console.log(`Tried to remove client ${client.localAddress} which is not in session anymore`);
-            return;
+            return false;
         }
-        this.sessions.delete(session);
+        var result = this.sessions.delete(session);
+        if (result)
+        {
+            console.log(`Removed session ${client.localAddress}. Active sessions: ${this.sessions.entries.length}`);
+        }
+        return result;
     }
     private sessions: Set<Session> = new Set<Session>();
 }
 
 export class Session
 {
-    constructor(client: Socket)
+    private close()
+    {
+        console.log(`Closed session`);
+        this.Client.end();
+        this.sessionStore.RemoveSession(this.Client);
+    }
+
+    public Write(data: any)
+    {
+        this.Tick();
+        this.Client.write(data);
+    }
+
+    public OnRequest(request: Request)
+    {
+        this.Tick();
+    }
+
+    constructor(client: Socket, store: SessionStore)
     {
         this.Client = client;
+
+        //TODO: disconnect client after timeout
+        this.sessionStore = store;
+        this.Tick();
     }
 
     public Client: Socket;
+    private sessionStore: SessionStore;
+    private timeoutHandler: any;
+    private timeoutMs: number = 2000;
+
+    private OnTimeoutReached()
+    {
+        console.log(`Reached timeout due to inactivity, closing session`);
+        if (this.timeoutHandler != undefined)
+        {
+            this.timeoutHandler.clearTimeout();
+        }
+        this.close();
+    }
+
+    private Tick()
+    {
+        if (this.timeoutHandler != undefined)
+        {
+            this.timeoutHandler.clearTimeout();
+        }
+
+        this.timeoutHandler = setTimeout(this.OnTimeoutReached, this.timeoutMs);
+    }
 }

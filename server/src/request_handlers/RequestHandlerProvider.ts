@@ -1,11 +1,11 @@
 import { HandshakeHandler } from "./HandshakeHandler";
 import * as protocol from "../generated/communication_protocol_pb";
-import { Session } from "../Session";
+import { SessionStore } from "../Session";
 
 // Provides request handler for given OperationRequestCode
 export class RequestHandlerProvider
 {
-    constructor(session: Session)
+    constructor(session: SessionStore)
     {
         this.handlers.set(protocol.OperationRequestCode.HANDSHAKE, new HandshakeHandler(session));
     }

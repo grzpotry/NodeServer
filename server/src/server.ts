@@ -9,7 +9,7 @@ import * as protocol from "./generated/communication_protocol_pb";
 import { OperationResponse } from "./OperationResponse";
 import { RequestHandlerProvider } from "./request_handlers/RequestHandlerProvider";
 import { Socket } from "net";
-import { SessionStore } from "./Session";
+import { SessionStore, Session } from "./Session";
 
 var server = net.Server(function (socket: any)
 {
@@ -25,6 +25,7 @@ var server = net.Server(function (socket: any)
     //Data received from client
     socket.on('data', function (data: any)
     {
+        var session: Session | null = sessionStore.TryGetSession(socket);
         //TODO: check if client is part of current session
         console.log(`Received data: ${data}`)
         var command = protocol.Command.deserializeBinary(data);
@@ -41,8 +42,20 @@ var server = net.Server(function (socket: any)
         }
 
         var request = protocol.OperationRequest.deserializeBinary(command.getPayload());
+        var requestCode = request.getRequestCode();
+
+        if (session == null && requestCode != protocol.OperationRequestCode.HANDSHAKE)
+        {
+            console.log(`Not expected request for not connected socket: ${requestCode}`);
+            return;
+        }
+        else if (session != null)
+        {
+            session.OnRequest(request);
+        }
+
         HandleOperationRequest(request, socket)
-            .then(SendOperationResponse)
+            .then((_) => SendOperationResponse(_, socket))
             .catch(e => 
             {
                 console.log(`Error occured while processing operation request: ${e}`);
@@ -51,7 +64,6 @@ var server = net.Server(function (socket: any)
 
     socket.on('end', function ()
     {
-        console.log("Client disconnected");
         sessionStore.RemoveSession(socket);
     });
 });
@@ -81,12 +93,12 @@ function HandleOperationRequest(operationRequest: any, socket: any, callback?: E
     return requestHandler.Handle(operationRequest.getPayload(), socket, requestCode);
 }
 
-function SendOperationResponse(response: OperationResponse)
+function SendOperationResponse(response: OperationResponse, socket: Socket)
 {
     console.log(`sending response for request ${response.body.getRequestCode()}`);
     var command: protocol.Command = new protocol.Command();
     command.setType(protocol.CommandType.OP_RESPONSE);
     command.setPayload(response.body.serializeBinary());
-    response.socket.write(command.serializeBinary());
+    socket.write(command.serializeBinary());
 }
 
