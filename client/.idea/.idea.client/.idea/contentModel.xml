@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Grzegorz\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Grzegorz\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_client.1343151607.00" t="ExcludeRecursive" />
+    <e p="E:\Projekty\NodeClientServer\client" t="IncludeRecursive">
+      <e p="Assets" t="Include">
+        <e p="scripts" t="Include">
+          <e p="Networking" t="Include">
+            <e p="Framework" t="Include">
+              <e p="BasePeer.cs" t="Include" />
+              <e p="Connection.cs" t="Include" />
+              <e p="ConnectionInfo.cs" t="Include" />
+              <e p="Dispatchers" t="Include">
+                <e p="IDispatcher.cs" t="Include" />
+                <e p="ImmediateDispatcher.cs" t="Include" />
+                <e p="IUnityThreadListener.cs" t="Include" />
+                <e p="UnityDispatcher.cs" t="Include" />
+              </e>
+              <e p="Editor" t="Include">
+                <e p="EditorMenuUtils.cs" t="Include" />
+              </e>
+              <e p="INetworkClient.cs" t="Include" />
+              <e p="INetworkPeer.cs" t="Include" />
+              <e p="TcpClient.cs" t="Include" />
+              <e p="ThreadSafePeer.cs" t="Include" />
+              <e p="UserData.cs" t="Include" />
+              <e p="Utils" t="Include">
+                <e p="BasePool.cs" t="Include" />
+                <e p="Config.cs" t="Include" />
+                <e p="IListExt.cs" t="Include" />
+                <e p="ListPool.cs" t="Include" />
+                <e p="Logger.cs" t="Include" />
+                <e p="NetworkLogType.cs" t="Include" />
+                <e p="TaskExt.cs" t="Include" />
+              </e>
+            </e>
+            <e p="generated" t="Include">
+              <e p="communication_protocol" t="Include">
+                <e p="CommunicationProtocol.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Networking.asmdef" t="Include" />
+          </e>
+          <e p="Simulation" t="Include">
+            <e p="Domain" t="Include">
+              <e p="Bindings" t="Include">
+                <e p="BindableComponentMember.cs" t="Include" />
+                <e p="BindableMethod.cs" t="Include" />
+                <e p="BindableProperty.cs" t="Include" />
+              </e>
+              <e p="Config.cs" t="Include" />
+              <e p="Controller" t="Include">
+                <e p="PlayerController.cs" t="Include" />
+              </e>
+              <e p="Data" t="Include">
+                <e p="PlayerDTO.cs" t="Include" />
+                <e p="SimulationDTO.cs" t="Include" />
+              </e>
+              <e p="Domain.asmdef" t="Include" />
+              <e p="Network" t="Include">
+                <e p="Data" t="Include">
+                  <e p="CustomEventCode.cs" t="Include" />
+                  <e p="FullUpdateEventDTO.cs" t="Include" />
+                  <e p="NetworkEventDTO.cs" t="Include" />
+                  <e p="PlayerMovedEventDTO.cs" t="Include" />
+                </e>
+                <e p="Peer.cs" t="Include" />
+              </e>
+              <e p="Player.cs" t="Include" />
+              <e p="Serialization" t="Include">
+                <e p="Vector3Converter.cs" t="Include" />
+              </e>
+              <e p="Simulation.cs" t="Include" />
+            </e>
+            <e p="View" t="Include">
+              <e p="Application.cs" t="Include" />
+              <e p="Binding" t="Include">
+                <e p="ButtonBinding.cs" t="Include" />
+                <e p="ComponentPropertyBinding.cs" t="Include" />
+                <e p="ToggleGameObject.cs" t="Include" />
+              </e>
+              <e p="PlayerPhysics.cs" t="Include" />
+              <e p="SimulationView.cs" t="Include" />
+              <e p="View.asmdef" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="client.sln" t="IncludeFlat" />
+      <e p="Domain.csproj" t="IncludeRecursive" />
+      <e p="Networking.csproj" t="IncludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="View.csproj" t="IncludeRecursive" />
+    </e>
+  </component>
+</project>

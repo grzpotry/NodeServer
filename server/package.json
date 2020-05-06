@@ -1,0 +1,38 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "google-protobuf": "^3.10.0",
+    "net": "^1.0.2",
+    "nodemon": "^1.19.1",
+    "npm": "^6.9.0",
+    "protobufjs": "^6.8.8",
+    "response-time": "^2.3.2",
+    "socket.io": "^2.2.0",
+    "ts-protoc-gen": "^0.12.0",
+    "typescript": "^3.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc",
+    "prod": "tsc && node ./dist/src/Server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grzpotry/NodeServer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grzpotry/NodeServer/issues"
+  },
+  "homepage": "https://github.com/grzpotry/NodeServer#readme"
+}
