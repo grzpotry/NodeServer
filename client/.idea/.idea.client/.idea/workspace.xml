@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BuildServerSettings">
+    <option name="LOGIN" value="" />
+    <option name="SERVER_URL" value="http://buildserver" />
+    <option name="REMEMBER_ME" value="true" />
+    <option name="USE_IDEA_PROXY_SETTINGS" value="true" />
+    <option name="INSPECTIONS_BUILD_TYPE_IDS" />
+    <option name="DUPLICATES_BUILD_TYPE_IDS" />
+    <option name="ENABLE_SUITABLE_CONFIGURATION_CACHING" value="true" />
+    <option name="COVERAGE_SETTINGS" />
+    <option name="TEST_STATUS_ENABLED" value="true" />
+    <option name="TEST_STATUS_SHOW_SUCCESSFUL" value="false" />
+    <option name="POSTPONE_SUITABLE_CONFIGURATIONS_SEARCH" value="false" />
+    <option name="ARTIFACTS_BUILD_TYPE_IDS" />
+    <option name="PERFORM_COMMIT_IF_SUCCESSFUL" value="true" />
+    <option name="PERFORM_COMMIT_IF_NO_NEW_FAILED_TESTS" value="false" />
+    <option name="REQUEST_CONFIRMATON" value="false" />
+    <option name="PRE_TESTED_COMMIT" value="true" />
+    <option name="FILTER_BY_STATUS" value="false" />
+    <option name="FILTER_MARKED_AS_FIXED" value="false" />
+    <option name="SHOW_CLOSE_PROMPT" value="true" />
+    <option name="TOOL_WINDOW_SELECTED_CONTENT_INDEX" value="0" />
+    <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
+    <option name="showStatusBarWidget" value="true" />
+    <treeState key="project">
+      <selectedPath>
+        <pathElement>
+          <option name="myNodeId" value="helperText" />
+          <option name="myNodeType" value="jetbrains.buildServer.tree.descriptors.LinkedTextDescriptor" />
+        </pathElement>
+      </selectedPath>
+    </treeState>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6620f400-aa3f-4f70-9e1a-55c02da3ddd1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.client/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.client/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Networking/EditorMenuUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/Networking/EditorMenuUtils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Networking/Framework/ConnectionInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/Networking/Framework/ConnectionInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/Config.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Bindings/BindableMethod.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Bindings/BindableMethod.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Bindings/BindableProperty.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Bindings/BindableProperty.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Network/Data/CustomEventCode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Network/Data/CustomEventCode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Network/Peer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Network/Peer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Simulation/View/Application.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/Simulation/View/Application.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Simulation/View/Binding/ButtonBinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/Simulation/View/Binding/ButtonBinding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Simulation/View/Binding/ComponentPropertyBinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/Simulation/View/Binding/ComponentPropertyBinding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Simulation/View/Binding/ToggleGameObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/Simulation/View/Binding/ToggleGameObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Simulation/View/PlayerPhysics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/Simulation/View/PlayerPhysics.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Simulation/View/SimulationView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/Simulation/View/SimulationView.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="client" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Network/Data/FullUpdateEventDTO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Network/Peer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Serialization/Vector3Converter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../NodeClientServer_debug_clients/client3/Assets/scripts/Networking/Framework/BasePeer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Simulation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/View/SimulationView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/View/Binding/ToggleGameObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/11/a1b4ce26/Logger.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/Dispatchers/IDispatcher.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EA7CCBAE-A5EB-4E9A-B235-93290E322A88/b8/af19273a/IMessage`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Bindings/BindableMethod.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EA7CCBAE-A5EB-4E9A-B235-93290E322A88/4/CodedOutputStream.ComputeSize.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/INetworkClient.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/TaskExt.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EF28F193-EAB6-4E49-B44B-3FB27EAB4F75/2b/ed07f2cc/StreamReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/ConnectionInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/Config.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/ListPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EA7CCBAE-A5EB-4E9A-B235-93290E322A88/5/CodedOutputStream.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/ThreadSafePeer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EA7CCBAE-A5EB-4E9A-B235-93290E322A88/2A/Wrappers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/BasePool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/Connection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EA7CCBAE-A5EB-4E9A-B235-93290E322A88/14/MessageExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/BasePeer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Bindings/BindableComponentMember.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/862B9365-843C-4BF1-BA93-210C124BB523/06/aca4ab5f/NetworkStream.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Data/PlayerDTO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/EditorMenuUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Controller/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EA7CCBAE-A5EB-4E9A-B235-93290E322A88/3/CodedInputStream.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D0D4D5C5-4770-4C19-B779-34F45540E71D/4c/20129ed7/JsonUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EA7CCBAE-A5EB-4E9A-B235-93290E322A88/3B/MessageDescriptor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/TcpClient.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/978BB286-3A1E-4C66-A74B-72341E3A291D/41/1985e7ac/Socket.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/INetworkPeer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EA7CCBAE-A5EB-4E9A-B235-93290E322A88/49/MapField.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7C074160-DD1A-4D91-9B45-B6E4C27A3BAC/a2/8e3328aa/PropertyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EA7CCBAE-A5EB-4E9A-B235-93290E322A88/13/LimitedInputStream.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EA7CCBAE-A5EB-4E9A-B235-93290E322A88/2C/Descriptor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/Logger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D7AC571C-A2D0-4B2F-981D-0D886FA067CF/a0/72f8f364/ThreadStart.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/862B9365-843C-4BF1-BA93-210C124BB523/a6/45ec7256/TcpClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EA7CCBAE-A5EB-4E9A-B235-93290E322A88/13/c18ae5b6/IMessage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/generated/communication_protocol/CommunicationProtocol.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D7AC571C-A2D0-4B2F-981D-0D886FA067CF/69/b0ea3137/Thread.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/862B9365-843C-4BF1-BA93-210C124BB523/72/cb43e525/UdpClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EA7CCBAE-A5EB-4E9A-B235-93290E322A88/15/MessageParser.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Network/Data/CustomEventCode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/View/PlayerPhysics.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/862B9365-843C-4BF1-BA93-210C124BB523/7a/30428e46/TcpClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/View/Binding/ButtonBinding.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Bindings/BindableProperty.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/IListExt.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Config.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/Dispatchers/IUnityThreadListener.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/NetworkLogType.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/Dispatchers/ImmediateDispatcher.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/Dispatchers/UnityDispatcher.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/View/Application.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Data/SimulationDTO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Network/Data/NetworkEventDTO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/UserData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/View/Binding/ComponentPropertyBinding.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Network/Data/PlayerMovedEventDTO.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/scripts/Networking/Framework/UserData.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/Application.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/CustomPeer.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/Simulation.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/View/PlayerView.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/Domain/Application.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/View/PlayerPhysics.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/Vector3Converter.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/Serialization/Vector3Converter.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/Serialization/JsonParser.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/View/Binding/ComponentBinding.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/View/Binding/ComponentPropertyBinder.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/View/Binding/BindableComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/View/Binding/BindablePropertyComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/View/Binding/BindableComponentMember.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/View/Binding/BindableMethod.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/View/Binding/BindableProperty.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/Domain/Bindings/BindableMethod.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/View/Binding/ButtonBinding.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/View/Binding/ComponentPropertyBinding.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/Domain/Bindings/BindableProperty.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/View/Binding/ToggleGameObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/Domain/Bindings/BindableComponentMember.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/IListExt.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/Domain/Simulation.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/View/SimulationView.cs" />
+        <option value="$PROJECT_DIR$/../../NodeClientServer_debug_clients/client3/Assets/scripts/Networking/Framework/BasePeer.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/Domain/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/Controller/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/Domain/CustomPeer.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/Domain/Network/Peer.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/View/Application.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Example/Domain/Controller/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/Logger.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/NetworkLogType.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Simulation/View/Binding/ButtonBinding.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Simulation/View/Application.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Simulation/View/PlayerPhysics.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Network/Peer.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Network/Data/PlayerMovedEventDTO.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Network/Data/CustomEventCode.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Bindings/BindableMethod.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Bindings/BindableProperty.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Networking/EditorMenuUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Networking/Framework/BasePeer.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/Config.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Networking/Framework/Connection.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Networking/Framework/ConnectionInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Networking/Framework/TcpClient.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Simulation/View/SimulationView.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VelOpNZgAorpQIsbRLgTu4v78J" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="Rider.SolutionExplorerActivator" value="true" />
+    <property name="TWShift.3" value="true" />
+    <property name="TWShift.4" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Assets/scripts/Networking/Framework" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys_rider" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6620f400-aa3f-4f70-9e1a-55c02da3ddd1" name="Default Changelist" comment="" />
+      <created>1562430090371</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1562430090371</updated>
+      <workItem from="1562430093252" duration="10255000" />
+      <workItem from="1562498000703" duration="6118000" />
+      <workItem from="1562621198763" duration="1554000" />
+      <workItem from="1562699458162" duration="734000" />
+      <workItem from="1570217128550" duration="4105000" />
+      <workItem from="1570269366273" duration="10984000" />
+      <workItem from="1570357038322" duration="599000" />
+      <workItem from="1570650551780" duration="1197000" />
+      <workItem from="1571260050812" duration="599000" />
+      <workItem from="1571690877162" duration="44000" />
+      <workItem from="1571690940446" duration="665000" />
+      <workItem from="1571776856493" duration="6465000" />
+      <workItem from="1571951630484" duration="305000" />
+      <workItem from="1572036848075" duration="4295000" />
+      <workItem from="1572209708833" duration="2563000" />
+      <workItem from="1572387945234" duration="1430000" />
+      <workItem from="1572695103177" duration="1047000" />
+      <workItem from="1572810173549" duration="8551000" />
+      <workItem from="1572896149454" duration="6838000" />
+      <workItem from="1577621418156" duration="4878000" />
+      <workItem from="1579958880234" duration="4179000" />
+      <workItem from="1581173020724" duration="8635000" />
+      <workItem from="1583958446420" duration="192000" />
+      <workItem from="1586690484627" duration="1970000" />
+      <workItem from="1587228959072" duration="2859000" />
+      <workItem from="1587326686890" duration="425000" />
+      <workItem from="1587579811228" duration="5419000" />
+      <workItem from="1587671125879" duration="3234000" />
+      <workItem from="1587674376516" duration="3120000" />
+      <workItem from="1587927194418" duration="63000" />
+      <workItem from="1588103831700" duration="3750000" />
+      <workItem from="1588795950579" duration="1833000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="471" height="438" key="DebuggerActiveHint" timestamp="1587675344790">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="471" height="438" key="DebuggerActiveHint/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587675344790" />
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1588107775569">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="279" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588107775569" />
+    <state width="938" height="207" key="GridCell.Tab.0.bottom" timestamp="1587677498831">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="207" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587677498831" />
+    <state width="938" height="207" key="GridCell.Tab.0.center" timestamp="1587677498831">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="207" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587677498831" />
+    <state width="938" height="207" key="GridCell.Tab.0.left" timestamp="1587677498831">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="207" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587677498831" />
+    <state width="938" height="207" key="GridCell.Tab.0.right" timestamp="1587677498831">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="207" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587677498831" />
+    <state width="938" height="207" key="GridCell.Tab.1.bottom" timestamp="1587677498832">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="207" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587677498832" />
+    <state width="938" height="207" key="GridCell.Tab.1.center" timestamp="1587677498831">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="207" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587677498831" />
+    <state width="938" height="207" key="GridCell.Tab.1.left" timestamp="1587677498831">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="207" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587677498831" />
+    <state width="938" height="207" key="GridCell.Tab.1.right" timestamp="1587677498832">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="207" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587677498832" />
+    <state width="938" height="207" key="GridCell.Tab.2.bottom" timestamp="1587677498832">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="207" key="GridCell.Tab.2.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587677498832" />
+    <state width="938" height="207" key="GridCell.Tab.2.center" timestamp="1587677498832">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="207" key="GridCell.Tab.2.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587677498832" />
+    <state width="938" height="207" key="GridCell.Tab.2.left" timestamp="1587677498832">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="207" key="GridCell.Tab.2.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587677498832" />
+    <state width="938" height="207" key="GridCell.Tab.2.right" timestamp="1587677498832">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="207" key="GridCell.Tab.2.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587677498832" />
+    <state width="938" height="207" key="GridCell.Tab.3.bottom" timestamp="1587677498832">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="207" key="GridCell.Tab.3.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587677498832" />
+    <state width="938" height="207" key="GridCell.Tab.3.center" timestamp="1587677498832">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="207" key="GridCell.Tab.3.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587677498832" />
+    <state width="938" height="207" key="GridCell.Tab.3.left" timestamp="1587677498832">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="207" key="GridCell.Tab.3.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587677498832" />
+    <state width="938" height="207" key="GridCell.Tab.3.right" timestamp="1587677498832">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="938" height="207" key="GridCell.Tab.3.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587677498832" />
+    <state x="670" y="206" key="RiderGenerateDialog" timestamp="1587673150872">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="670" y="206" key="RiderGenerateDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587673150872" />
+    <state x="461" y="168" key="SettingsEditor" timestamp="1581177640013">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="461" y="168" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1581177640013" />
+    <state x="638" y="257" width="644" height="536" key="find.popup" timestamp="1588108347462">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="638" y="257" width="644" height="536" key="find.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588108347462" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1587673060452">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587673060452" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1588797069661">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588797069661" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EA7CCBAE-A5EB-4E9A-B235-93290E322A88/14/MessageExtensions.cs</url>
+          <line>228</line>
+          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EA7CCBAE-A5EB-4E9A-B235-93290E322A88/14/MessageExtensions.cs" initialLine="228">
+            <startOffsets>
+              <option value="10787" />
+            </startOffsets>
+            <endOffsets>
+              <option value="10839" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EA7CCBAE-A5EB-4E9A-B235-93290E322A88/14/MessageExtensions.cs</url>
+          <line>234</line>
+          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EA7CCBAE-A5EB-4E9A-B235-93290E322A88/14/MessageExtensions.cs" initialLine="234">
+            <startOffsets>
+              <option value="11148" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11185" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/scripts/Networking/TcpClient.cs</url>
+          <line>9</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/scripts/Networking/TcpClient.cs" initialLine="9" />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/scripts/Example/View/SimulationView.cs</url>
+          <line>57</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/scripts/Example/View/SimulationView.cs" initialLine="55" />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/scripts/Example/View/SimulationView.cs</url>
+          <line>46</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/scripts/Example/View/SimulationView.cs" initialLine="48" />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
+        <watch expression="JsonUtility.ToJson(moveEvent)" language="C#" custom="RiderImportsList:" />
+        <watch expression="Component.GetType().GetMember(MemberName)" language="C#" custom="RiderImportsList:" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

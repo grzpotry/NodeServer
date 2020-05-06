@@ -1,0 +1,89 @@
+//This file contains definitions for data structures which are shared between client and server API in Google's data format - protocol buffers
+//Since client and server API are written in different languages, we need some interchangeable format for them.
+//Code for target API's is automatically generated
+//See more: https://developers.google.com/protocol-buffers/
+//Author: Grzegorz Potrykus
+
+syntax = "proto3";
+package CommunicationProtocol;
+option csharp_namespace = "Networking.Protobuf.CommunicationProtocol";
+
+//Network command which is sent between endpoints, typically it can be operation request, response for such operation, or event notification
+message Command
+{
+	CommandType type = 1;
+	bytes payload = 2;
+}
+
+enum CommandType
+{
+    OP_REQUEST = 0;
+    OP_RESPONSE = 1;
+    EVENT = 2;
+}
+
+//Event which can be invoked by client or server
+message EventData
+{
+    EventCode code = 1;
+    bytes payload = 2;
+}
+
+enum EventCode
+{
+    CLIENT_JOINED = 0;
+    CLIENT_LEFT = 1;
+	// Means that EventData's payload will contain serialized CustomEventData
+	CUSTOM_EVENT = 2; 
+}
+
+//Application - specific event which can be defined in client's API itself
+message CustomEventData
+{
+	//Identifies type of event - can be wrapped with enum in target API
+	int32 code = 1;
+	bytes payload = 2;
+}
+
+//Request for operation execution (from client to server or contrary). Receiver is always expected to answer with appropriate response.
+message OperationRequest
+{
+    OperationRequestCode request_code = 1;
+    bytes payload = 2;
+}
+
+enum OperationRequestCode
+{
+    HANDSHAKE = 0;
+    RAISE_EVENT = 1;
+}
+
+//Response for particular OperationRequest
+message OperationResponse
+{
+    OperationRequestCode request_code = 1;
+    OperationResponseCode response_code = 2;
+    bytes payload = 3;
+}
+
+enum OperationResponseCode
+{
+    INVALID_PROTOCOL = 0;
+    INVALID_LOGIN = 1;
+    INVALID_PASSWORD = 2;
+	HANDSHAKE_SUCCESS = 3;
+	ALREADY_CONNECTED = 4;
+	EVENT_BROADCASTED = 5;
+}
+
+//Payload for Handshake OperationRequest
+message HandshakePayload
+{
+    uint32 protocol_version = 1;
+	UserData user = 2;
+}
+
+message UserData
+{
+	string Username = 1;
+}
