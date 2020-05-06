@@ -1,4 +1,5 @@
 import { Socket } from "net";
+import * as protocol from "../generated/communication_protocol_pb";
 
 ///TODO: manages clients
 export class SessionStore
@@ -69,13 +70,14 @@ export class SessionStore
 
 
     //TODO: change to more optimized structure
-    //TODO: privaate
+    //TODO: private
     public Sessions: Set<Session> = new Set<Session>();
 }
 
 export class Session
 {
     public Client: Socket;
+    public UserData: protocol.CommunicationProtocol.UserData;
 
     public Write(data: any)
     {
@@ -88,9 +90,10 @@ export class Session
         this.Client.end();
     }
 
-    constructor(client: Socket)
+    constructor(client: Socket, data: protocol.CommunicationProtocol.UserData)
     {
         this.Client = client;
+        this.UserData = data;
         this.Client.setTimeout(this.timeoutMs);
     }
 

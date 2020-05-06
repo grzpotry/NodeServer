@@ -18,6 +18,7 @@
                 <e p="UnityDispatcher.cs" t="Include" />
               </e>
               <e p="Editor" t="Include">
+                <e p="Editor.asmdef" t="Include" />
                 <e p="EditorMenuUtils.cs" t="Include" />
               </e>
               <e p="INetworkClient.cs" t="Include" />
@@ -28,7 +29,6 @@
               <e p="Utils" t="Include">
                 <e p="BasePool.cs" t="Include" />
                 <e p="Config.cs" t="Include" />
-                <e p="IListExt.cs" t="Include" />
                 <e p="ListPool.cs" t="Include" />
                 <e p="Logger.cs" t="Include" />
                 <e p="NetworkLogType.cs" t="Include" />
@@ -89,6 +89,7 @@
       </e>
       <e p="client.sln" t="IncludeFlat" />
       <e p="Domain.csproj" t="IncludeRecursive" />
+      <e p="Editor.csproj" t="IncludeRecursive" />
       <e p="Networking.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />

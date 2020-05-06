@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Networking.Framework.Utils;
 using Simulation.Domain.Data;
 using UnityEngine;
 
@@ -24,12 +23,8 @@ namespace Simulation.Domain
 
         public void LoadFrom(SimulationDTO dto)
         {
-            _players.ReplaceWith(dto.Players, _ =>
-            {
-                var player = new Player(isLocalPlayer: _localPlayerId == _.Id, _);
-                PlayerAdded?.Invoke(player);
-                return player;
-            }, onRemoved: _ => PlayerRemoved?.Invoke(_));
+            _players.ToList().ForEach(RemovePlayer);
+            dto.Players.ForEach(_ => AddPlayer(new Player(isLocalPlayer: _localPlayerId == _.Id, _)));
         }
 
         public SimulationDTO Save()

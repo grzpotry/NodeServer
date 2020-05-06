@@ -34,12 +34,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6620f400-aa3f-4f70-9e1a-55c02da3ddd1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/scripts/Networking/Framework/Editor.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scripts/Networking/EditorMenuUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/Networking/Framework/Editor/EditorMenuUtils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scripts/Networking/EditorMenuUtils.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/Networking/Framework/Editor/EditorMenuUtils.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.client/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.client/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.client/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.client/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Networking/EditorMenuUtils.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Networking/EditorMenuUtils.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/IListExt.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/IListExt.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Simulation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Simulation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/client_Data/Managed/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client_Data/Managed/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/client_Data/Managed/Networking.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client_Data/Managed/Networking.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/client_Data/Managed/Unity.Analytics.DataPrivacy.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client_Data/Managed/Unity.Analytics.DataPrivacy.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/client_Data/Managed/Unity.TextMeshPro.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client_Data/Managed/Unity.TextMeshPro.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/client_Data/Managed/Unity.Timeline.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client_Data/Managed/Unity.Timeline.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/client_Data/Managed/UnityEngine.SpatialTracking.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client_Data/Managed/UnityEngine.SpatialTracking.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/client_Data/Managed/UnityEngine.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client_Data/Managed/UnityEngine.UI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/client_Data/Managed/UnityEngine.XR.LegacyInputHelpers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client_Data/Managed/UnityEngine.XR.LegacyInputHelpers.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/client_Data/Managed/View.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client_Data/Managed/View.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/client_Data/Managed/com.unity.multiplayer-hlapi.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client_Data/Managed/com.unity.multiplayer-hlapi.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/client_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client_Data/globalgamemanagers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/client_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client_Data/globalgamemanagers.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/client_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client_Data/level0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/client_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client_Data/resources.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/client_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client_Data/sharedassets0.assets" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +138,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/862B9365-843C-4BF1-BA93-210C124BB523/7a/30428e46/TcpClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/View/Binding/ButtonBinding.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Bindings/BindableProperty.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/IListExt.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Config.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/Dispatchers/IUnityThreadListener.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/NetworkLogType.cs" root0="FORCE_HIGHLIGHTING" />
@@ -137,7 +153,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/scripts/Example/Application.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Example/CustomPeer.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Example/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Example/Simulation.cs" />
@@ -160,7 +175,6 @@
         <option value="$PROJECT_DIR$/Assets/scripts/Example/Domain/Bindings/BindableProperty.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Example/View/Binding/ToggleGameObject.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Example/Domain/Bindings/BindableComponentMember.cs" />
-        <option value="$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/IListExt.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Example/Domain/Simulation.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Example/View/SimulationView.cs" />
         <option value="$PROJECT_DIR$/../../NodeClientServer_debug_clients/client3/Assets/scripts/Networking/Framework/BasePeer.cs" />
@@ -188,6 +202,8 @@
         <option value="$PROJECT_DIR$/Assets/scripts/Networking/Framework/TcpClient.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Simulation/View/SimulationView.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/Networking/Framework/Editor/EditorMenuUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Networking/Framework/Utils/IListExt.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/Simulation/Domain/Simulation.cs" />
       </list>
     </option>
   </component>
@@ -283,7 +299,8 @@
       <workItem from="1587927194418" duration="63000" />
       <workItem from="1588103831700" duration="3750000" />
       <workItem from="1588795950579" duration="1833000" />
-      <workItem from="1588798802456" duration="45000" />
+      <workItem from="1588798802456" duration="1200000" />
+      <workItem from="1588879914689" duration="1107000" />
     </task>
     <servers />
   </component>
@@ -394,10 +411,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587673060452" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1588797069661">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1588881002189">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588797069661" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1588881002189" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

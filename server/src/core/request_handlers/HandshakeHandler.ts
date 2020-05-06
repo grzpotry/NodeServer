@@ -31,7 +31,7 @@ export class HandshakeHandler extends RequestHandler<protocol.HandshakePayload> 
         }
         else
         {
-            this.SessionStore.AddSession(new Session(socket));
+            this.SessionStore.AddSession(new Session(socket, user));
             response.body.setResponseCode(protocol.OperationResponseCode.HANDSHAKE_SUCCESS);
 
             var event = new protocol.EventData();

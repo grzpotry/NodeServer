@@ -62,10 +62,12 @@ export class ServerCore
             socket.on('end', function ()
             {
                 console.log(`Closed connection with ${socket.remoteAddress}`);
-                this.sessionStore.RemoveSession(socket);
+                let session = this.sessionStore.GetSession(socket);
+
                 var event = new protocol.EventData();
-                //TODO: wrap userData with socket and send it as a payload here
                 event.setCode(protocol.EventCode.CLIENT_LEFT);
+                event.setPayload(session.UserData.serializeBinary());
+                this.sessionStore.RemoveSession(socket);
                 this.broadcaster.BroadcastEvent(socket, event);
             }.bind(this));
 
