@@ -17,5 +17,10 @@ By default connection is established on port 3000
 # Start client
 ```client/bin/client.exe```
 
-Communication protocol
+# Communication protocol
+Data structures used in low-level communication between client and master server are defined in
 ```common/protobuf/communication_protocol.proto```
+
+To regenerate code (if you edit this file) use .bat files from ```common/protobuf``` directly or use custom utility which is available in unity client.
+
+![image](https://user-images.githubusercontent.com/26557523/81234470-1af34280-8ff9-11ea-922f-24aef7662057.png)
